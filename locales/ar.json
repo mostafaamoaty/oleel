@@ -2363,7 +2363,9 @@
               "redeemed_label": "لقد قمت بالفعل بالمطالبة بـ Shop Cash لأن هذا الطلب وصل متأخرًا.",
               "expired_label": "لا يحق لهذا الطلب المطالبة بالتسليم المتأخر لأن ضمان الـ30 يومًا قد انتهى.",
               "no_shop_cash_label": "لا يحق لهذا الطلب المطالبة بالتسليم المتأخر لأنه لم يتم دفعه عبر Shop Pay.",
-              "no_longer_guaranteed_label": "لم تعد هذه العناصر مدعومة بضمان التسليم."
+              "no_longer_guaranteed_label": "لم تعد هذه العناصر مدعومة بضمان التسليم.",
+              "claim_shop_cash_title": "امسح ضوئيًا للمطالبة بـ {{amount}} في Shop Cash",
+              "claim_shop_cash_description": "بإمكانك استخدام رصيدك النقدي في المتجر في عمليات الشراء المستقبلية في تطبيق المتجر."
             }
           }
         },
@@ -2520,7 +2522,15 @@
         },
         "show_order_actions_accessibility_label": "إظهار إجراءات الطلب للطلب {{name}}"
       },
-      "list_title": "طلبات"
+      "list_title": "طلبات",
+      "status_mark_as_delivered": "وضع علامة على أنه تم التسليم",
+      "fulfillment_status_title": "حالة الإنجاز: {{status}}",
+      "buy_again": "اشتري مرة أخرى",
+      "buy_again_accessibility_label": "قم بالشراء مرة أخرى للطلب {{orderId}}",
+      "manage": "يدير",
+      "manage_accessiblity_label": "إدارة الطلب {{orderId}}",
+      "group_title_label": "جزء من: {{groupTitle}}",
+      "group_title_label_with_parent": "لـ: {{groupTitle}}"
     },
     "ui_components": {
       "dropzoneDraggedOver": "إسقاط الملف للتحميل"
@@ -3015,7 +3025,129 @@
     "order_details": {
       "contact": "اتصال",
       "shipping": {
-        "free_shipping_discount": "ًالشحن مجانا"
+        "free_shipping_discount": "ًالشحن مجانا",
+        "address": "عنوان الشحن",
+        "address_map_marker": "عنوان الشحن",
+        "method": "طريقة الشحن"
+      },
+      "shipment_timeline": {
+        "expand_events_label": "إظهار التفاصيل",
+        "expand_events_accessibility_label": "إظهار تفاصيل شحن الطلب",
+        "hide_events_label": "إخفاء التفاصيل",
+        "hide_events_accessibility_label": "إخفاء تفاصيل شحن الطلب"
+      },
+      "addresses_section_title": "الفواتير والشحن",
+      "order_details": "تفاصيل الطلب",
+      "order_details_skeleton_accessibility_label": "قم بتسجيل الدخول لعرض كافة تفاصيل الطلب.",
+      "billing_address": "عنوان الفاتورة",
+      "card_ending_with": "تنتهي بـ {{lastDigits}}",
+      "contact_information": "معلومات الاتصال",
+      "company": "شركة",
+      "company_and_location": "الشركة والموقع",
+      "fully_refunded_label": "تم استرداد المبلغ",
+      "group_title_label": "جزء من: {{groupTitle}}",
+      "group_title_label_with_parent": "لـ: {{groupTitle}}",
+      "view_controls": {
+        "gallery": "معرض الصور",
+        "list": "قائمة"
+      },
+      "grouped_view_components": {
+        "expand_line_items": "عرض {{count}} عنصرًا",
+        "collapse_line_items": "إخفاء {{count}} عنصرًا",
+        "line_item_summary_list_accessibility_label": "العناصر الموجودة في حزمة {{productTitle}}"
+      },
+      "discount": "تخفيض",
+      "hide_items": "إخفاء العناصر",
+      "loading": "تحميل تفاصيل الطلب",
+      "loading_finished_accessibility_message": "تم تحميل تفاصيل الطلب",
+      "location": "موقع",
+      "image_gallery": {
+        "next": "إظهار العناصر التالية",
+        "previous": "إظهار العناصر السابقة",
+        "load_more_items": {
+          "one": "تحميل {{count}} عناصر إضافية",
+          "other": "تحميل {{count}} عناصر إضافية"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "إظهار ملخص الطلب",
+        "closed": "إخفاء ملخص الطلب"
+      },
+      "no_data": "لا أحد",
+      "no_data_provided_accessibility_label": "{{fieldName}} فارغ",
+      "not_applicable": "غير متوفر",
+      "paid_amount": "مدفوع",
+      "partially_refunded_label": "تم استرداد المبلغ جزئيًا",
+      "payment": {
+        "status_in_review": "الدفع مستحق بعد المراجعة",
+        "status_unpaid": "الدفع مستحق في {{date}}",
+        "title": "قسط",
+        "payment_type": {
+          "gift_card": "بطاقة هدية",
+          "store_credit": "رصيد المتجر",
+          "money_order": "حوالة بريدية",
+          "cash_on_delivery": "الدفع عند الاستلام (COD)",
+          "bank_deposit": "وديعة بنكية",
+          "manual": "يدوي"
+        },
+        "card_payment_details": "تنتهي بـ {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "تنتهي بـ {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "رصيد المتجر - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "تم الدفع بأقساط Shop Pay",
+          "view_schedule": "عرض الجدول الزمني"
+        },
+        "manual_payment_methods": {
+          "money_order": "حوالة بريدية - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "الدفع عند الاستلام (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "إيداع بنكي - {{formattedTransactionAmount}}",
+          "manual": "دليل - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "إظهار الكل",
+          "show_less": "إظهار أقل",
+          "details": "تفاصيل",
+          "payment_details": "تفاصيل الدفع"
+        },
+        "emv_details": {
+          "auth": "المصادقة:",
+          "aid": "يساعد:",
+          "source": "مصدر:"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "تم الدفع عن طريق أقساط Shop Pay",
+        "description": "ابق على اطلاع بجدول الدفع الخاص بك من خلال التذكيرات في تطبيق المتجر.",
+        "payment_reminders_button": "احصل على تذكيرات الدفع",
+        "desktop_qr_code_content": {
+          "title": "مسح للتذكيرات",
+          "description": "احصل على تذكيرات بأقساطك مع المتجر."
+        }
+      },
+      "refunded_amount": "تم استرداد المبلغ",
+      "request_return_failed": "حدثت مشكلة أثناء معالجة طلبك. يُرجى المحاولة مرة أخرى.",
+      "login_card": {
+        "resend_link_and_login": "لعرض تفاصيل طلبك، قم بتسجيل الدخول أو أرسل رابطًا جديدًا إلى البريد الإلكتروني أو رقم الهاتف المستخدم عند الدفع.",
+        "resend_link_only": "لعرض تفاصيل طلبك، أرسل رابطًا جديدًا إلى البريد الإلكتروني أو رقم الهاتف المستخدم عند الدفع.",
+        "log_in": "تسجيل الدخول",
+        "resend_link": "إرسال رابط جديد",
+        "link_expired": "انتهت صلاحية الرابط"
+      },
+      "remaining_amount": "متبقي",
+      "marketing_section_title": "الأخبار والعروض",
+      "marketing_description": "ستصلك رسائل تسويقية عبر البريد الإلكتروني. يمكنك إلغاء الاشتراك في أي وقت.",
+      "marketing_checkbox_label": "أرسل لي بريدًا إلكترونيًا بالأخبار والعروض",
+      "marketing_checkmark_label": "لقد اشتركت لتلقي الأخبار والعروض عبر البريد الإلكتروني",
+      "returns": {
+        "expand_events_label": "إظهار التفاصيل",
+        "hide_events_label": "إخفاء التفاصيل",
+        "ineligible_return_message": "لا يجوز إرجاع أي عنصر في هذا الطلب.",
+        "ineligible_return_message_when_returned": "لا يجوز إرجاع أي عناصر إضافية في هذا الطلب.",
+        "print_shipping_label": "طباعة ملصق الشحن",
+        "return_and_refund_modal_header": "سياسة الاسترداد",
+        "tracking_number": "عدد تتبع:",
+        "exchange_header": "تبادل العناصر",
+        "exchange_subheader": "سيتم إضافة العناصر البديلة إلى الطلب بمجرد اكتمال عملية الإرجاع."
       }
     }
   },
