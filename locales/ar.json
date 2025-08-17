@@ -731,6 +731,122 @@
       "tooltip": {
         "accessibility_label_context": "مزيد من المعلومات حول %{context}",
         "additional_payment_methods": "طرق الدفع الإضافية"
+      },
+      "shipping": {
+        "subscription_delivery_description": {
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "تكلفة الشحن الأولى %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})، ثم %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "متضمن",
+          "recurring_order_shipping_price": "متبوعًا بـ %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "تم تضمين الطلب الأول، متبوعًا بـ %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} لكل عملية تسليم)، متبوعًا بـ %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "الطلب الأول مجاني",
+            "other": "أول %{count} طلب مجاني"
+          },
+          "free_for_first_n_order": {
+            "one": "للطلب الأول",
+            "other": "لأول %{count} طلب"
+          }
+        },
+        "one_time_purchase_shipping": "الشحن لمرة واحدة",
+        "duties_and_taxes_title": "الرسوم والضرائب",
+        "shipping_information_required_notice": "معلومات الشحن مطلوبة. {{link}} .",
+        "shipping_information_redirect_link": "أدخل معلوماتك هنا",
+        "loading_progressive_rates": "البحث عن المزيد من الأسعار…",
+        "no_other_methods_available": "لا توجد طرق أخرى متاحة",
+        "duties_and_taxes_options": {
+          "ddu_title": "الدفع عند التسليم",
+          "ddu_caption": "قد يتم تطبيق رسوم إضافية",
+          "ddp_title": "ادفع الآن",
+          "ddp_caption": "لا توجد رسوم إضافية عند التسليم"
+        },
+        "shipping_method_combinations": {
+          "without_separator": "%{الطريقة الأولى}، %{الطريقة الثانية}",
+          "with_separator": "%{الباقي}، %{الحالي}،",
+          "combination": "%{rest} و%{current}"
+        },
+        "shipping_used_as_billing_notice": "سيتم أيضًا استخدام هذا كعنوان إرسال الفاتورة الخاص بك لهذا الطلب.",
+        "address_update": "تحديث العنوان",
+        "shipping_address_title": "سافر على متن سفينة لِـ",
+        "add_address": "استخدم عنوانًا مختلفًا",
+        "add_delivery_instructions": "إضافة تعليمات التسليم",
+        "edit": "يحرر",
+        "delete": "يمسح",
+        "address_more": "مزيد من الإجراءات لهذا العنوان",
+        "address_edit": "تعديل العنوان",
+        "address_delete": "حذف العنوان",
+        "address_confirm": "هل أنت متأكد أنك تريد حذف هذا العنوان من حسابك؟",
+        "address_default": "تعيين كإعداد افتراضي",
+        "address_form": {
+          "add_address": "إضافة عنوان",
+          "save": "يحفظ",
+          "cancel": "يلغي",
+          "generic_error": "حدثت مشكلة أثناء حفظ عنوانك. يُرجى المحاولة مرة أخرى.",
+          "one_time_address_subtitle": "استخدم عنوانًا لمرة واحدة لهذا الطلب"
+        },
+        "different_shipping_method_summary": "أدخل عنوان شحن مختلفًا لعرض طرق الشحن المتاحة",
+        "invalid_shipping_method_summary": "أدخل عنوان شحن صالحًا لعرض طرق الشحن المتاحة",
+        "method_summary": {
+          "incomplete_address_entered": "أدخل عنوان الشحن الكامل لعرض طرق الشحن المتاحة",
+          "incomplete_address_selected": "حدد عنوان الشحن الكامل لعرض طرق الشحن المتاحة"
+        },
+        "local_pickup": {
+          "search_address": "البحث عن العنوان",
+          "rollup_title": "موقع المتجر",
+          "rollup_title_next": "مكان الاستلام"
+        },
+        "missing_shipping_address": "عنوان الشحن مفقود",
+        "split_shipping_merchandise_quantity_label_standard": "%{quantity} عنصر",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} أكثر",
+        "split_shipping_merchandise_shipment_number": "شحنة %{number} من %{total}",
+        "pre_order_ships_now": "السفن الآن",
+        "pre_order_ships_later": "السفن في وقت لاحق",
+        "pre_order_ships_date": "السفن %{date}",
+        "split_shipping_shipped_by_shop": "تم الشحن بواسطة %{shop_name}",
+        "split_shipping_multiple_shipment_label": "شحنات متعددة",
+        "split_shipping_shipping_label": "طريقة",
+        "split_shipping_shipment_notice": "سيصل طلبك خلال %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "سيصل طلبك الأول خلال %{quantity_shipments}",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} شحنات",
+        "split_shipping_multiple_shipment_notice": "سيصل طلبك في شحنات متعددة",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "سيصل طلبك في شحنات %{quantity}",
+        "split_shipping_more_shipping_options": "مزيد من خيارات الشحن",
+        "split_shipping_shipment_number": "الشحنة %{number}",
+        "split_shipping_merchandise_quantity_label_inline_primary": "الكمية: %{quantity}",
+        "split_shipping_merchandise_quantity_label_inline": "%{عنوان_البضاعة} ×%{الكمية}",
+        "split_shipping_option_free": "ًالشحن مجانا",
+        "split_shipping_option_lowest_price": "أقل سعر",
+        "split_shipping_option_fastest": "الأسرع",
+        "split_shipping_option_recommended": "مُستَحسَن",
+        "split_shipping_option_custom": "مخصص"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "معلومات إضافية",
+          "tax_credential_br": "صندوق التقاعد المركزي/صندوق التقاعد الوطني",
+          "shipping_credential_br": "صندوق التقاعد المركزي/صندوق التقاعد الوطني",
+          "shipping_credential_kr": "قانون الجمارك الشخصية",
+          "shipping_credential_cn": "رقم هوية المقيم",
+          "tax_credential_it": "كوديس فيسكالي (اختياري)",
+          "tax_email_it": "PEC (اختياري)",
+          "tax_credential_cl": "شبق",
+          "shipping_credential_cl": "شبق",
+          "tax_credential_co": "سيدولا/إيفا",
+          "tax_credential_type_co": "تيبو سيدولا",
+          "shipping_credential_co": "سيدولا/إيفا",
+          "shipping_credential_type_co": "تيبو سيدولا",
+          "tax_credential_cr": "رقم التعريف/RUT",
+          "shipping_credential_cr": "رقم التعريف/RUT",
+          "tax_credential_id": "مشروع المياه والصرف الصحي الوطني",
+          "shipping_credential_id": "مشروع المياه والصرف الصحي الوطني",
+          "tax_credential_my": "رقم التعريف الضريبي/التسجيل",
+          "shipping_credential_my": "رقم التعريف الضريبي/التسجيل",
+          "shipping_credential_mx": "طلب التعليقات",
+          "tax_credential_mx": "طلب التعليقات",
+          "tax_credential_type_mx": "النظام المالي",
+          "tax_credential_use_mx": "استخدام CFDI",
+          "tax_credential_pe": "مدير الاستخبارات الوطنية/شرطة ألستر الملكية/الشرطة المدنية"
+        }
       }
     },
     "pagination": {
