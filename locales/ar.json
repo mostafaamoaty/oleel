@@ -1918,6 +1918,10 @@
       "words_connector": "، ",
       "two_words_connector": " و ",
       "last_word_connector": "، و "
+    },
+    "page_titles": {
+      "search": "يبحث",
+      "collections": "المجموعات"
     }
   },
   "customer_accounts": {
@@ -2217,7 +2221,8 @@
           }
         },
         "show_order_actions_accessibility_label": "إظهار إجراءات الطلب للطلب {{name}}"
-      }
+      },
+      "list_title": "طلبات"
     },
     "ui_components": {
       "dropzoneDraggedOver": "إسقاط الملف للتحميل"
@@ -2351,7 +2356,9 @@
       "try_new_search": "حاول البحث الجديد",
       "view_details": "عرض التفاصيل",
       "company_location": "موقع الشركة",
-      "skip_to_content": "انتقل إلى المحتوى"
+      "skip_to_content": "انتقل إلى المحتوى",
+      "orders_link_label": "طلبات",
+      "search": "يبحث"
     },
     "announcement_bar": {
       "expand_label": "توسيع شريط الإعلان",
@@ -2497,6 +2504,9 @@
         "modal_po_number_input_max_length_error": "تحتوي أرقام طلب الشراء على الحد الأقصى من {{maxLength}} حرف.",
         "save": "يحفظ",
         "title": "رقم الطلب {{poNumber}}"
+      },
+      "orders": {
+        "order_list_column_headers_contact": "اتصال"
       }
     },
     "errors": {
@@ -2571,6 +2581,12 @@
       "back_button_accessibility_label": "العودة إلى {{paymentMethodStepTitle}}",
       "default": "تقصير",
       "generic_card": "بطاقة"
+    },
+    "order_details": {
+      "contact": "اتصال",
+      "shipping": {
+        "free_shipping_discount": "ًالشحن مجانا"
+      }
     }
   },
   "sections": {
@@ -2649,7 +2665,8 @@
         "product": "منتج",
         "total": "المجموع",
         "quantity": "كمية",
-        "image": "صورة المنتج"
+        "image": "صورة المنتج",
+        "price": "سعر"
       },
       "update": "تحديث",
       "login": {
@@ -2718,7 +2735,8 @@
       "previous": "الصفحة السابقة"
     },
     "search": {
-      "reset": "مسح مصطلح البحث"
+      "reset": "مسح مصطلح البحث",
+      "search": "يبحث"
     },
     "cart": {
       "view": "عرض عربة التسوق ( {{ count }} )",
@@ -2834,7 +2852,8 @@
     "contact": {
       "form": {
         "post_success": "شكرًا لتواصلك معنا. سنتواصل معك في أقرب وقت ممكن.",
-        "error_heading": "يرجى تعديل ما يلي:"
+        "error_heading": "يرجى تعديل ما يلي:",
+        "title": "نموذج الاتصال"
       }
     },
     "404": {
@@ -2847,7 +2866,8 @@
     "update_language": "تحديث اللغة",
     "update_country": "تحديث البلد/المنطقة",
     "popular_countries_regions": "الدول/المناطق الشعبية",
-    "country_results_count": "تم العثور على {{ count }} دولة/منطقة"
+    "country_results_count": "تم العثور على {{ count }} دولة/منطقة",
+    "search": "يبحث"
   },
   "customer": {
     "account": {
@@ -2926,7 +2946,8 @@
       "tracking_company": "الناقل",
       "tracking_number": "عدد تتبع",
       "subtotal": "المجموع الفرعي",
-      "total_duties": "الواجبات"
+      "total_duties": "الواجبات",
+      "price": "سعر"
     },
     "orders": {
       "title": "سجل الطلبات",
