@@ -1340,5 +1340,36 @@
       "inventory_low_stock_show_count": "المخزون منخفض: {{ quantity }} متبقية",
       "inventory_out_of_stock": "إنتهى من المخزن"
     }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "إليك رصيد بطاقة الهدايا {{ value }} لـ {{ shop }} !",
+      "subtext": "بطاقة الهدية الخاصة بك",
+      "gift_card_code": "رمز بطاقة الهدايا",
+      "shop_link": "قم بزيارة المتجر عبر الإنترنت",
+      "add_to_apple_wallet": "أضف إلى محفظة Apple",
+      "qr_image_alt": "رمز الاستجابة السريعة - امسح ضوئيًا لاسترداد بطاقة الهدايا",
+      "copy_code": "نسخ رمز بطاقة الهدية",
+      "expiration_date": "تنتهي صلاحيتها {{ expires_on }}",
+      "copy_code_success": "تم نسخ الكود بنجاح",
+      "expired": "منتهي الصلاحية"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "أريد أن أرسل هذا كهدية",
+      "expanded": "نموذج مستلم بطاقة الهدايا الموسع",
+      "collapsed": "تم انهيار نموذج مستلم بطاقة الهدية",
+      "email_label": "بريد المستلم الإلكتروني",
+      "email_label_optional_for_no_js_behavior": "البريد الإلكتروني للمستلم (اختياري)",
+      "email": "بريد إلكتروني",
+      "name_label": "اسم المستلم (اختياري)",
+      "name": "اسم",
+      "message_label": "الرسالة (اختياري)",
+      "message": "رسالة",
+      "max_characters": "{{ max_chars }} حرف كحد أقصى",
+      "send_on": "سنة-شهر-يوم",
+      "send_on_label": "إرسال (اختياري)"
+    }
   }
 }
