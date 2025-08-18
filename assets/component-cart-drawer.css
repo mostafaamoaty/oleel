@@ -29,6 +29,10 @@
   transition: transform var(--duration-default) ease;
 }
 
+[dir="rtl"] .drawer__inner {
+  transform: translateX(-100%);
+}
+
 .drawer__inner-empty {
   height: 100%;
   padding: 0 1.5rem;

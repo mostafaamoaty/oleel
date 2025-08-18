@@ -84,6 +84,12 @@
   top: calc(50% - 0.2rem);
 }
 
+/* RTL support for icon-caret positioning */
+[dir="rtl"] .localization-form__select .icon-caret {
+  right: auto;
+  left: calc(var(--inputs-border-width) + 1.5rem);
+}
+
 .localization-selector.link {
   text-decoration: none;
   appearance: none;
@@ -93,6 +99,12 @@
   width: 100%;
   padding-right: 4rem;
   padding-bottom: 1.5rem;
+}
+
+/* RTL support for localization selector padding */
+[dir="rtl"] .localization-selector.link {
+  padding-right: 0;
+  padding-left: 4rem;
 }
 
 .disclosure .localization-form__select {
@@ -122,10 +134,15 @@
   background-color: transparent;
 }
 
+/* RTL support for disclosure button - reverse order of icon-caret and content */
+[dir="rtl"] .disclosure__button {
+  flex-direction: row-reverse;
+}
+
 .disclosure__list-wrapper {
-  border-width: var(--popup-border-width);
+  /* border-width: var(--popup-border-width);
   border-style: solid;
-  border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+  border-color: rgba(var(--color-foreground), var(--popup-border-opacity)); */
   overflow: hidden;
   position: absolute;
   bottom: 100%;
@@ -133,8 +150,7 @@
   z-index: 2;
   background-color: rgb(var(--color-background));
   border-radius: var(--popup-corner-radius);
-  box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)
-    rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  box-shadow: box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0364);
   max-height: 27.5rem;
 }
 
@@ -391,6 +407,11 @@
   height: 3.8rem;
 }
 
+/* RTL support for header localization padding */
+.js .header-localization:not(.menu-drawer__localization) .rtl.localization-form__select {
+  padding: 0 1.2rem 0 2.7rem !important;
+}
+
 .header-localization:not(.menu-drawer__localization) .localization-form:only-child .localization-form__select {
   margin: 0;
 }
@@ -408,6 +429,12 @@
 
 .header-localization:not(.menu-drawer__localization) .localization-form__select .icon-caret {
   right: 0.8rem;
+}
+
+/* RTL support for header localization icon-caret */
+[dir="rtl"] .header-localization:not(.menu-drawer__localization) .localization-form__select .icon-caret {
+  right: auto;
+  left: 0.8rem;
 }
 
 .header-localization:not(.menu-drawer__localization) .disclosure__list-wrapper {
@@ -448,4 +475,16 @@
 
 .language-selector .disclosure__list {
   min-width: 200px;
+}
+
+.country-selector__currency {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.language-selector__icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

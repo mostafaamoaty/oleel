@@ -31,7 +31,7 @@ class CartDrawer extends HTMLElement {
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
     // here the animation doesn't seem to always get triggered. A timeout seem to help
     setTimeout(() => {
-      this.classList.add('animate', 'active');
+      this.classList.add('active');
     });
 
     this.addEventListener(

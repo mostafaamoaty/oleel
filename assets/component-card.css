@@ -305,6 +305,10 @@
   margin-bottom: 0;
 }
 
+.card__heading a {
+  font-family: "IBMPlexSansArabic-SemiBold";
+}
+
 .card__heading:last-child {
   margin-bottom: 0;
 }
