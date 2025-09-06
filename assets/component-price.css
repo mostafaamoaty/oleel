@@ -19,8 +19,10 @@
 }
 
 .price .price-item {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin: 0 1rem 0 0;
+  font-weight: 700;
 }
 
 .price__regular .price-item--regular {

@@ -1,1 +1,20 @@
-{{ 'sections.cart.new_estimated_total' | t }}: {{ cart.total_price | money_with_currency }}
+{%- liquid
+  # Check if current currency is SAR (Saudi Riyal)
+  assign is_sar_currency = false
+  if localization.country.currency.iso_code == 'SAR'
+    assign is_sar_currency = true
+  endif
+-%}
+{{ 'sections.cart.new_estimated_total' | t }}:
+{% if settings.currency_code_enabled -%}
+  {%- if is_sar_currency -%}
+    {{- cart.total_price | money_without_currency -}}
+  {%- else -%}
+    {{- cart.total_price | money_with_currency -}}
+  {%- endif -%}
+{%- else -%}
+  {{- cart.total_price | money -}}
+{%- endif %}
+{%- if is_sar_currency -%}
+  <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span>
+{%- endif -%}

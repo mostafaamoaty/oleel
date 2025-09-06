@@ -7,15 +7,24 @@
 
   @example
   {% render 'unit-price', price: variant.unit_price, measurement: variant.unit_price_measurement %}
-
   @example
   {% render 'unit-price', price: line_item.unit_price | money_with_currency, measurement: line_item.unit_price_measurement }
 {%- enddoc -%}
+{%- liquid
+  # Check if current currency is SAR (Saudi Riyal)
+  assign is_sar_currency = false
+  if localization.country.currency.iso_code == 'SAR'
+    assign is_sar_currency = true
+  endif
+-%}
 <small class="unit-price caption">
   {%- unless hide_accessibility_label -%}
     <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
   {%- endunless -%}
   <span class="price-item price-item--last">
     {{ price | unit_price_with_measurement: measurement }}
+    {%- if is_sar_currency -%}
+      <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span>
+    {%- endif -%}
   </span>
 </small>

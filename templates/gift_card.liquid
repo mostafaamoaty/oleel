@@ -114,6 +114,9 @@
           {% else %}
             {{ gift_card.balance | money }}
           {% endif %}
+          {%- if localization.country.currency.iso_code == 'SAR' -%}
+            <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span>
+          {%- endif -%}
         </h1>
         {%- if gift_card.enabled == false or gift_card.expired -%}
           <p class="badge badge--expired">{{ 'gift_cards.issued.expired' | t }}</p>
