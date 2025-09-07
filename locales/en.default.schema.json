@@ -290,6 +290,14 @@
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https://vimeo.com/shopify"
+        },
+        "social_whatsapp_link": {
+          "label": "WhatsApp",
+          "info": "https://wa.me/shopify"
+        },
+        "social_email_link": {
+          "label": "Email",
+          "info": "mailto:shopify"
         }
       }
     },

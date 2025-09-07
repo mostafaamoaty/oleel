@@ -1356,6 +1356,18 @@
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_whatsapp_link",
+        "label": "t:settings_schema.social-media.settings.social_whatsapp_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_whatsapp_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_email_link",
+        "label": "t:settings_schema.social-media.settings.social_email_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_email_link.info"
       }
     ]
   },

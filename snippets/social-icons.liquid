@@ -10,6 +10,16 @@
 {% endcomment %}
 
 <ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
+  {%- if settings.social_email_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_email_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-email.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.email' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
   {%- if settings.social_facebook_link != blank -%}
     <li class="list-social__item">
       <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
@@ -57,6 +67,16 @@
           {{- 'icon-twitter.svg' | inline_asset_content -}}
         </span>
         <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_whatsapp_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_whatsapp_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-whatsapp.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.whatsapp' | t }}</span>
       </a>
     </li>
   {%- endif -%}
