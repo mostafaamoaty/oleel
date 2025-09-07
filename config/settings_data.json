@@ -106,6 +106,7 @@
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_description": "<p>تصاميم مستوحاة من تفاصيلك، ممزوجة بأجود الخامات، مصنوعة بشغف.. لك أنت خصيصًا، جرب الفخامة اللي تستحقها الآن.</p>",
     "brand_image": "shopify://shop_images/Logo.svg",
+    "brand_image_width": 200,
     "social_facebook_link": "",
     "social_instagram_link": "https://google.com",
     "social_youtube_link": "",
