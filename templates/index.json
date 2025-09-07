@@ -114,8 +114,9 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/star-06.svg",
+            "title": "جودة لا يُضاهى بها",
+            "text": "<p>كل عباءة تحمل شهادة أصالة تليق بذائقتك الرفيعة.</p>",
             "link_label": "",
             "link": ""
           }
@@ -123,8 +124,9 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/shield-tick.svg",
+            "title": "راحة البال تبدأ من هنا",
+            "text": "<p>عمليات شراء آمنة في منصة موثوقة منذ 2017.</p>",
             "link_label": "",
             "link": ""
           }
@@ -132,8 +134,19 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/package.svg",
+            "title": "شحن راقٍ",
+            "text": "<p>شحن سريع، مجاني، ودولي.. لتصل عبايتك بأناقتها دون تأخير.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LVWQjJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/message-smile-square.svg",
+            "title": "سياسة راقية",
+            "text": "<p>استرجاع سهل، واضح، وبدون أي تعقيدات – لأن رضاكِ أولوية.</p>",
             "link_label": "",
             "link": ""
           }
@@ -142,9 +155,9 @@
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "column_LVWQjJ"
       ],
-      "disabled": true,
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -152,8 +165,8 @@
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "center",
+        "columns_desktop": 4,
+        "column_alignment": "left",
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
