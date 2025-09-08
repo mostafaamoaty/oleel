@@ -1,0 +1,183 @@
+.logos-marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-marquee__container {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* RTL Support for container */
+[dir="rtl"] .logos-marquee__container {
+  margin-left: 0;
+  margin-right: calc(-50vw + 50%);
+}
+
+.logos-marquee__track {
+  display: flex;
+  width: fit-content;
+  animation: marquee-left 50s linear infinite;
+  --marquee-width: 100%;
+}
+
+.logos-marquee__track[data-direction="right"] {
+  animation: marquee-right 50s linear infinite;
+  transform: translateX(calc(-100% / 6));
+}
+
+/* JavaScript will override animation duration via inline styles */
+
+.logos-marquee__content {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Default fallback, will be overridden by section-specific styles */
+  padding: 1rem 2rem;
+  direction: ltr; /* Force LTR direction to prevent logo order reversal */
+}
+
+/* Ensure section-specific spacing always takes precedence */
+.logos-marquee .logos-marquee__content {
+  gap: 2rem !important;
+}
+
+.logos-marquee__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.logos-marquee__item:hover {
+  opacity: 1;
+}
+
+.logos-marquee__link {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logos-marquee__link:hover {
+  transform: scale(1.05);
+}
+
+.logos-marquee__image {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logos-marquee__item:hover .logos-marquee__image {
+  filter: grayscale(0%);
+}
+
+.logos-marquee__placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+/* Marquee animations - using calc for precise positioning */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 6));
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(calc(-100% / 6));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+.logos-marquee__track:hover {
+  animation-play-state: paused !important;
+}
+
+/* Also pause when hovering on individual logo items */
+.logos-marquee__item:hover {
+  animation-play-state: paused !important;
+}
+
+/* Pause when hovering on the entire marquee container */
+.logos-marquee__container:hover .logos-marquee__track {
+  animation-play-state: paused !important;
+}
+
+/* RTL Support */
+[dir="rtl"] .logos-marquee__content {
+  direction: ltr; /* Force LTR to prevent logo order reversal */
+}
+
+[dir="rtl"] .logos-marquee__track {
+  animation: marquee-right 50s linear infinite;
+  transform: translateX(calc(-100% / 6));
+}
+
+[dir="rtl"] .logos-marquee__track[data-direction="left"] {
+  animation: marquee-left 50s linear infinite;
+  transform: translateX(0);
+}
+
+[dir="rtl"] .logos-marquee__track[data-direction="right"] {
+  animation: marquee-right 50s linear infinite;
+  transform: translateX(calc(-100% / 6));
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .logos-marquee__content {
+    padding: 1rem 1.5rem;
+  }
+  
+  .logos-marquee__track {
+    animation-duration: 30s;
+  }
+  
+  .logos-marquee__track[data-direction="right"] {
+    animation-duration: 30s;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .logos-marquee__content {
+    padding: 1rem 1rem;
+  }
+  
+  .logos-marquee__track {
+    animation-duration: 25s;
+  }
+  
+  .logos-marquee__track[data-direction="right"] {
+    animation-duration: 25s;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logos-marquee__track {
+    animation: none;
+  }
+  
+  .logos-marquee__track[data-direction="right"] {
+    animation: none;
+  }
+  
+  .logos-marquee__content {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

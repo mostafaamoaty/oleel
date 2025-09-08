@@ -1,0 +1,406 @@
+{{ 'section-logos-marquee.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .logos-marquee[data-section-id="{{ section.id }}"] {
+    --logo-spacing: {{ section.settings.logo_spacing | default: 32 }}px;
+    --marquee-speed: {{ section.settings.marquee_speed | default: 50 }}s;
+    --marquee-direction: {{ section.settings.marquee_direction | default: 'left' }};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__content {
+    gap: var(--logo-spacing) !important;
+  }
+
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track {
+    animation-duration: var(--marquee-speed) !important;
+  }
+
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track[data-direction="left"] {
+    animation: marquee-left var(--marquee-speed) linear infinite !important;
+  }
+
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track[data-direction="right"] {
+    animation: marquee-right var(--marquee-speed) linear infinite !important;
+  }
+
+  /* RTL Support for section-specific animations */
+  [dir="rtl"] .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__content {
+    direction: ltr !important; /* Force LTR to prevent logo order reversal */
+  }
+
+  [dir="rtl"] .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track {
+    animation: marquee-right var(--marquee-speed) linear infinite !important;
+  }
+
+  [dir="rtl"] .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track[data-direction="left"] {
+    animation: marquee-left var(--marquee-speed) linear infinite !important;
+  }
+
+  [dir="rtl"] .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track[data-direction="right"] {
+    animation: marquee-right var(--marquee-speed) linear infinite !important;
+  }
+
+  /* Hover pause for section-specific animations */
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__track:hover {
+    animation-play-state: paused !important;
+  }
+
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__item:hover {
+    animation-play-state: paused !important;
+  }
+
+  .logos-marquee[data-section-id="{{ section.id }}"] .logos-marquee__container:hover .logos-marquee__track {
+    animation-play-state: paused !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .logos-marquee[data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="logos-marquee section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  data-section-id="{{ section.id }}"
+  data-logo-spacing="{{ section.settings.logo_spacing | default: 32 }}"
+>
+  {%- if section.settings.heading != blank -%}
+    <div class="page-width">
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="logos-marquee__container">
+      <div
+        class="logos-marquee__track"
+        data-speed="{{ section.settings.marquee_speed | default: 50 }}"
+        data-direction="{{ section.settings.marquee_direction | default: 'left' }}"
+      >
+        <div class="logos-marquee__content">
+          {%- comment -%} First set of logos {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            <div class="logos-marquee__item" {{ block.shopify_attributes }}>
+              {%- if block.settings.logo != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="logos-marquee__link" target="_blank" rel="noopener">
+                {%- endif -%}
+
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo.alt | default: block.settings.logo_name | escape }}"
+                  class="logos-marquee__image"
+                  width="{{ section.settings.logo_width | default: 120 }}"
+                  height="auto"
+                  loading="lazy"
+                >
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+
+          {%- comment -%} Second set of logos for seamless loop {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            <div class="logos-marquee__item">
+              {%- if block.settings.logo != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="logos-marquee__link" target="_blank" rel="noopener">
+                {%- endif -%}
+
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo.alt | default: block.settings.logo_name | escape }}"
+                  class="logos-marquee__image"
+                  width="{{ section.settings.logo_width | default: 120 }}"
+                  height="auto"
+                  loading="lazy"
+                >
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+
+          {%- comment -%} Third set of logos for better seamless loop {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            <div class="logos-marquee__item">
+              {%- if block.settings.logo != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="logos-marquee__link" target="_blank" rel="noopener">
+                {%- endif -%}
+
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo.alt | default: block.settings.logo_name | escape }}"
+                  class="logos-marquee__image"
+                  width="{{ section.settings.logo_width | default: 120 }}"
+                  height="auto"
+                  loading="lazy"
+                >
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+
+          {%- comment -%} Fourth set of logos for perfect seamless loop {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            <div class="logos-marquee__item">
+              {%- if block.settings.logo != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="logos-marquee__link" target="_blank" rel="noopener">
+                {%- endif -%}
+
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo.alt | default: block.settings.logo_name | escape }}"
+                  class="logos-marquee__image"
+                  width="{{ section.settings.logo_width | default: 120 }}"
+                  height="auto"
+                  loading="lazy"
+                >
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+
+          {%- comment -%} Fifth set of logos for extra coverage {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            <div class="logos-marquee__item">
+              {%- if block.settings.logo != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="logos-marquee__link" target="_blank" rel="noopener">
+                {%- endif -%}
+
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo.alt | default: block.settings.logo_name | escape }}"
+                  class="logos-marquee__image"
+                  width="{{ section.settings.logo_width | default: 120 }}"
+                  height="auto"
+                  loading="lazy"
+                >
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+
+          {%- comment -%} Sixth set of logos for extra coverage {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            <div class="logos-marquee__item">
+              {%- if block.settings.logo != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="logos-marquee__link" target="_blank" rel="noopener">
+                {%- endif -%}
+
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo.alt | default: block.settings.logo_name | escape }}"
+                  class="logos-marquee__image"
+                  width="{{ section.settings.logo_width | default: 120 }}"
+                  height="auto"
+                  loading="lazy"
+                >
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="page-width">
+      <div class="logos-marquee__placeholder">
+        <p>{{ 'sections.logos_marquee.no_logos' | t }}</p>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<script src="{{ 'logos-marquee.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Logos Marquee",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Our Partners",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 60,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "logo_spacing",
+      "min": 10,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Spacing between logos",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "label": "Marquee speed",
+      "info": "Lower values = faster animation",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "marquee_direction",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left to right"
+        },
+        {
+          "value": "right",
+          "label": "Right to left"
+        }
+      ],
+      "default": "left",
+      "label": "Marquee direction"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+        },
+        {
+          "type": "text",
+          "id": "logo_name",
+          "label": "Logo name",
+          "info": "Used for alt text if image alt is not set"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Logo link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logos Marquee",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
