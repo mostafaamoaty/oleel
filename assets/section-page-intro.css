@@ -1,0 +1,246 @@
+.page-intro {
+  position: relative;
+}
+
+.page-intro__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-intro__heading-wrapper {
+  width: 100%;
+}
+
+.page-intro__heading-wrapper--start {
+  text-align: start;
+}
+
+.page-intro__heading-wrapper--center {
+  text-align: center;
+}
+
+.page-intro__heading-wrapper--end {
+  text-align: end;
+}
+
+.page-intro__heading {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.page-intro__description-wrapper {
+  width: 100%;
+}
+
+.page-intro__description-wrapper--start {
+  text-align: start;
+}
+
+.page-intro__description-wrapper--center {
+  text-align: center;
+}
+
+.page-intro__description-wrapper--end {
+  text-align: end;
+}
+
+.page-intro__description {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.page-intro__description.body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.page-intro__description.subtitle {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.page-intro__banner-wrapper {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.page-intro__banner {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.page-intro__banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.page-intro__banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Image height variations */
+.page-intro__banner--small {
+  height: 200px;
+}
+
+.page-intro__banner--small img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.page-intro__banner--medium {
+  height: 300px;
+}
+
+.page-intro__banner--medium img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.page-intro__banner--large {
+  height: 400px;
+}
+
+.page-intro__banner--large img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.page-intro__banner--adapt {
+  height: auto;
+}
+
+.page-intro__banner--adapt img {
+  height: auto;
+}
+
+.page-intro__secondary-description-wrapper {
+  width: 100%;
+}
+
+.page-intro__secondary-description-wrapper--start {
+  text-align: start;
+}
+
+.page-intro__secondary-description-wrapper--center {
+  text-align: center;
+}
+
+.page-intro__secondary-description-wrapper--end {
+  text-align: end;
+}
+
+.page-intro__secondary-description {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.page-intro__secondary-description.body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.page-intro__secondary-description.subtitle {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .page-intro__container {
+    gap: 1.5rem;
+  }
+  
+  .page-intro__description {
+    font-size: 1.4rem;
+  }
+  
+  .page-intro__description.subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .page-intro__secondary-description {
+    font-size: 1.4rem;
+  }
+  
+  .page-intro__secondary-description.subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .page-intro__banner-wrapper {
+    margin: 1.5rem 0;
+  }
+  
+  /* Mobile image height adjustments */
+  .page-intro__banner--small {
+    height: 150px;
+  }
+  
+  .page-intro__banner--small img {
+    height: 150px;
+  }
+  
+  .page-intro__banner--medium {
+    height: 200px;
+  }
+  
+  .page-intro__banner--medium img {
+    height: 200px;
+  }
+  
+  .page-intro__banner--large {
+    height: 250px;
+  }
+  
+  .page-intro__banner--large img {
+    height: 250px;
+  }
+}
+
+/* Animation support */
+@media (prefers-reduced-motion: no-preference) {
+  .page-intro__banner img {
+    transition: transform 0.3s ease;
+  }
+  
+  .page-intro__banner:hover img {
+    transform: scale(1.02);
+  }
+}
+
+/* Focus styles for accessibility */
+.page-intro__heading:focus,
+.page-intro__description:focus,
+.page-intro__secondary-description:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .page-intro__banner {
+    box-shadow: none;
+  }
+  
+  .page-intro__banner img {
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
