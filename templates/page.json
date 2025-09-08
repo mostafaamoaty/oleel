@@ -38,10 +38,66 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "multicolumn_cards_6CbyWM": {
+      "type": "multicolumn-cards",
+      "blocks": {
+        "card_8cefby": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/54d62a05ac00f7b05bb5620b2167145424ec3e79.jpg",
+            "title": "أجــود الخــامـــات  مختــــــارة بعنايــــــــــة",
+            "description": "<p>نختار أجود الأقمشة من بيوت النسيج العريقة، حيث تلتقي النعومة بالمتانة</p>",
+            "card_style": "image-first"
+          }
+        },
+        "card_ycnraB": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1fb8b2ee204c0a91612d75e13ba425fc9f3183dc.png",
+            "title": "تفاصيــــل مستوحـــــاة  مــن التـــــراث",
+            "description": "<p>كل تطريز يحمل ذاكرة الأجداد، وكل زخرفة تروي حكاية عريقة بلمسة عصرية</p>",
+            "card_style": "content-first"
+          }
+        },
+        "card_gjeTBA": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/709aa38544959d48b50a7600915b89a9cead02a3.png",
+            "title": "تصميم محلـــــــي  بخياطـــة متقنـــــــــــــة",
+            "description": "<p>أيادي ماهرة سعودية تصنع كل قطعة بدقة، تحافظ على الهوية وتحتضن الحداثة</p>",
+            "card_style": "image-first"
+          }
+        }
+      },
+      "block_order": [
+        "card_8cefby",
+        "card_ycnraB",
+        "card_gjeTBA"
+      ],
+      "name": "Multicolumn Cards",
+      "settings": {
+        "title": "تفاصيل تصنع الفارق",
+        "description": "<p>في كل خيط نسجناه، في كل تطريز أضفناه، نحكي قصة الحرفية التي توارثناها عبر الأجيال</p>",
+        "heading_alignment": "center",
+        "heading_size": "h1",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "page_intro_TgMaW8"
+    "page_intro_TgMaW8",
+    "multicolumn_cards_6CbyWM"
   ]
 }
