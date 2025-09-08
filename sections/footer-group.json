@@ -30,15 +30,23 @@
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "من نحن",
+            "menu": "link-list-1"
+          }
+        },
+        "link_list_BazPLC": {
+          "type": "link_list",
+          "settings": {
+            "heading": "الدعم و المساعدة",
+            "menu": "link-list-2"
           }
         }
       },
       "block_order": [
         "brand_information_thzBKp",
         "footer-0",
-        "footer-1"
+        "footer-1",
+        "link_list_BazPLC"
       ],
       "settings": {
         "color_scheme": "scheme-1",
