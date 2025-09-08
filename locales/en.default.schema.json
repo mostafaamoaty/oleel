@@ -3530,6 +3530,12 @@
             },
             "link": {
               "label": "Link"
+            },
+            "title_color": {
+              "label": "Title color"
+            },
+            "description_color": {
+              "label": "Description color"
             }
           }
         }

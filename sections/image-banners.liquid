@@ -89,10 +89,17 @@
 
         <div class="image-banners__content image-banners__content--{{ block.settings.text_alignment }}">
           {%- if block.settings.title != blank -%}
-            <h3 class="image-banners__title">{{ block.settings.title }}</h3>
+            <h3 class="image-banners__title" style="color: {{ block.settings.title_color | default: '#ffffff' }};">
+              {{ block.settings.title }}
+            </h3>
           {%- endif -%}
           {%- if block.settings.description != blank -%}
-            <div class="image-banners__description rte">{{ block.settings.description }}</div>
+            <div
+              class="image-banners__description rte"
+              style="color: {{ block.settings.description_color | default: '#ffffff' }};"
+            >
+              {{ block.settings.description }}
+            </div>
           {%- endif -%}
         </div>
         {%- if block.settings.link != blank -%}
@@ -299,6 +306,18 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.image-banners.blocks.banner.settings.link.label"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "t:sections.image-banners.blocks.banner.settings.title_color.label",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "t:sections.image-banners.blocks.banner.settings.description_color.label",
+          "default": "#ffffff"
         }
       ]
     }
