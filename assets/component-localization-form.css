@@ -74,6 +74,8 @@
 .disclosure__button.localization-form__select {
   padding: calc(2rem + var(--inputs-border-width));
   background: rgb(var(--color-background));
+  border: none;
+  box-shadow: none;
 }
 
 .localization-form__select .icon-caret {
@@ -150,8 +152,9 @@
   z-index: 2;
   background-color: rgb(var(--color-background));
   border-radius: var(--popup-corner-radius);
-  box-shadow: box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0364);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.0364);
   max-height: 27.5rem;
+  border: none;
 }
 
 .disclosure__list {
@@ -487,4 +490,25 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* Remove borders from footer localization dropdowns */
+.footer .localization-form__select::after {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.footer .localization-form__select:hover::after,
+.footer .localization-form__select:focus::after,
+.footer .localization-form__select:focus-visible::after {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.footer .localization-form__select,
+.footer .localization-form__select:hover,
+.footer .localization-form__select:focus,
+.footer .localization-form__select:focus-visible {
+  box-shadow: none !important;
+  border: none !important;
 }
