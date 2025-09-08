@@ -174,6 +174,49 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_banners_QhJeHQ": {
+      "type": "image-banners",
+      "blocks": {
+        "banner_FwhpPf": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/763e5a00a4686a243b4c6dbd62bbb5a33d53b0cf.png",
+            "size": "large",
+            "title": "روب العرائس",
+            "description": "<p>تفاصيل ناعمة تليق ببداية جديدة.. خفيف، أنثوي، ومصنوع بحب.</p>",
+            "text_alignment": "bottom-start",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "banner_rKLq8t": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/c040f061289fc30c9673e97c4258c64eab99cd68.png",
+            "size": "small",
+            "title": "عبايات أوليل",
+            "description": "<p>قصّات ناعمة، خامات مختارة، وأناقة تنسدل بهدوء.</p>",
+            "text_alignment": "bottom-start",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_FwhpPf",
+        "banner_rKLq8t"
+      ],
+      "name": "t:sections.image-banners.presets.name",
+      "settings": {
+        "heading": "تفاصيل تُكمّل إطلالتك بهدوء وأناقة..",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -181,6 +224,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "image_banners_QhJeHQ"
   ]
 }
