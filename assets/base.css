@@ -1185,6 +1185,17 @@ deferred-media {
   --alpha-button-border: 0.2;
 }
 
+.button--glass {
+  --color-button: rgba(255, 255, 255, 0.4);
+  --color-button-text: var(--color-secondary-button-text);
+  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  will-change: backdrop-filter;
+  -webkit-will-change: backdrop-filter;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
 .button,
 .shopify-challenge__button,
 .customer button,
@@ -1205,7 +1216,7 @@ button.shopify-payment-button__button--unbranded {
 .customer button,
 button.shopify-payment-button__button--unbranded {
   min-width: calc(12rem + var(--buttons-border-width) * 2);
-  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  min-height: calc(4.2rem + var(--buttons-border-width) * 2);
 }
 
 .button,

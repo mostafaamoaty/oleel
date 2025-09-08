@@ -2515,6 +2515,9 @@
           },
           "options__3": {
             "label": "Full width of column"
+          },
+          "options__4": {
+            "label": "Default width of 40px"
           }
         },
         "image_ratio": {
@@ -3415,6 +3418,124 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "image-banners": {
+      "name": "Image Banners",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "heading_size": {
+          "label": "Heading size",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "options__4": {
+            "label": "Extra large"
+          },
+          "options__5": {
+            "label": "XX Large"
+          }
+        },
+        "heading_alignment": {
+          "label": "Heading alignment",
+          "options__1": {
+            "label": "Start"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "End"
+          }
+        },
+        "color_scheme": {
+          "label": "Color scheme"
+        },
+        "overlay_opacity": {
+          "label": "Overlay opacity"
+        },
+        "section_padding_heading": {
+          "content": "Section padding"
+        },
+        "padding_top": {
+          "label": "Top padding"
+        },
+        "padding_bottom": {
+          "label": "Bottom padding"
+        }
+      },
+      "blocks": {
+        "banner": {
+          "name": "Banner",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "size": {
+              "label": "Banner size",
+              "options__1": {
+                "label": "Small"
+              },
+              "options__2": {
+                "label": "Large"
+              }
+            },
+            "title": {
+              "label": "Title"
+            },
+            "description": {
+              "label": "Description"
+            },
+            "text_alignment": {
+              "label": "Text alignment",
+              "options__1": {
+                "label": "Bottom start"
+              },
+              "options__2": {
+                "label": "Bottom center"
+              },
+              "options__3": {
+                "label": "Bottom end"
+              },
+              "options__4": {
+                "label": "Center start"
+              },
+              "options__5": {
+                "label": "Center"
+              },
+              "options__6": {
+                "label": "Center end"
+              },
+              "options__7": {
+                "label": "Top start"
+              },
+              "options__8": {
+                "label": "Top center"
+              },
+              "options__9": {
+                "label": "Top end"
+              }
+            },
+            "button_label": {
+              "label": "Button label",
+              "info": "Only applies to large banners"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Image Banners"
       }
     }
   }

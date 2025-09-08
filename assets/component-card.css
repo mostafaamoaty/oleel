@@ -269,6 +269,9 @@
     padding-top: 1.7rem;
   }
 }
+.card__buttons {
+  grid-row-start: 4;
+}
 
 .card__badge {
   align-self: flex-end;
@@ -358,6 +361,19 @@
   right: 0;
   top: 0;
   z-index: 1;
+}
+
+/* Fix quick add button clickability by disabling pointer events on card link overlay */
+.card__heading a::after {
+  pointer-events: none;
+}
+
+/* Ensure quick add buttons are clickable */
+.card__buttons,
+.card__buttons * {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .card__heading a:after {
