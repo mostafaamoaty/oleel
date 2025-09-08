@@ -53,8 +53,18 @@ class HeroCarousel {
   }
 
   getCardsPerView() {
-    // With fixed card widths: 380px per card on desktop, 300px on mobile
-    const cardWidth = window.innerWidth >= 750 ? 380 : 300;
+    // Responsive card widths based on screen size
+    let cardWidth;
+    if (window.innerWidth >= 1024) {
+      cardWidth = 380; // Desktop
+    } else if (window.innerWidth >= 750) {
+      cardWidth = 320; // Tablet
+    } else if (window.innerWidth >= 480) {
+      cardWidth = 280; // Mobile
+    } else {
+      cardWidth = 240; // Small mobile
+    }
+
     const containerWidth = this.cardsContainer.offsetWidth;
     return containerWidth / cardWidth; // Calculate how many cards fit in the container
   }

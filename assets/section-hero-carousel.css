@@ -11,6 +11,25 @@
   z-index: 10; /* Above hero image */
 }
 
+/* Responsive cards section spacing */
+@media screen and (max-width: 1024px) {
+  .hero-carousel__cards-section {
+    margin-top: -10rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .hero-carousel__cards-section {
+    margin-top: -8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-carousel__cards-section {
+    margin-top: -6rem;
+  }
+}
+
 .hero-carousel__cards-container {
   position: relative;
   overflow: visible;
@@ -182,7 +201,32 @@
   fill: currentColor;
 }
 
+/* Hero section responsive styles */
+@media screen and (max-width: 1024px) {
+  .hero-carousel__hero {
+    min-height: 60rem;
+  }
+  
+  .hero-carousel__content {
+    max-width: 50rem;
+    padding: 1.5rem;
+  }
+  
+  .hero-carousel__heading {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-carousel__description {
+    font-size: 1.4rem;
+  }
+}
+
 @media screen and (max-width: 749px) {
+  .hero-carousel__hero {
+    min-height: 50rem;
+  }
+  
   .hero-carousel__hero-navigation {
     left: 1rem;
     right: 1rem;
@@ -196,6 +240,51 @@
   .hero-carousel__nav-button .svg-wrapper {
     width: 1.2rem;
     height: 1.2rem;
+  }
+  
+  .hero-carousel__content {
+    max-width: 40rem;
+    padding: 1rem;
+  }
+  
+  .hero-carousel__heading {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-carousel__description {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-carousel__hero {
+    min-height: 40rem;
+  }
+  
+  .hero-carousel__content {
+    max-width: 35rem;
+    padding: 0.8rem;
+  }
+  
+  .hero-carousel__heading {
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-carousel__description {
+    font-size: 1.2rem;
+  }
+  
+  .hero-carousel__nav-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .hero-carousel__nav-button .svg-wrapper {
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -253,15 +342,77 @@
   z-index: 13; /* Above cards wrapper */
 }
 
-@media screen and (max-width: 749px) {
+/* Tablet styles */
+@media screen and (max-width: 1024px) and (min-width: 750px) {
   .hero-carousel__card {
-    flex: 0 0 300px; /* Smaller fixed width for mobile */
-    /* padding: 0 0.5rem; */
+    flex: 0 0 320px; /* Medium width for tablet */
   }
   
   .hero-carousel__card-media {
-    width: 280px; /* Smaller image on mobile */
-    height: 320px; /* Maintain aspect ratio */
+    width: 300px;
+    height: 360px;
+  }
+  
+  .hero-carousel__cards-track {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 749px) {
+  .hero-carousel__card {
+    flex: 0 0 280px; /* Smaller fixed width for mobile */
+  }
+  
+  .hero-carousel__card-media {
+    width: 260px;
+    height: 320px;
+  }
+  
+  .hero-carousel__cards-track {
+    gap: 1rem;
+    padding-left: calc((100vw - var(--page-width)) / 2 + 1rem);
+    padding-right: 1rem;
+  }
+  
+  .hero-carousel__card-content {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-carousel__card-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-carousel__card-description {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .hero-carousel__card {
+    flex: 0 0 240px; /* Even smaller for small mobile */
+  }
+  
+  .hero-carousel__card-media {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .hero-carousel__cards-track {
+    gap: 0.8rem;
+    padding-left: calc((100vw - var(--page-width)) / 2 + 0.8rem);
+    padding-right: 0.8rem;
+  }
+  
+  .hero-carousel__card-title {
+    font-size: 1.2rem;
+  }
+  
+  .hero-carousel__card-description {
+    font-size: 1.1rem;
   }
 }
 
