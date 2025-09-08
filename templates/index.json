@@ -178,18 +178,6 @@
     "image_banners_QhJeHQ": {
       "type": "image-banners",
       "blocks": {
-        "banner_FwhpPf": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/763e5a00a4686a243b4c6dbd62bbb5a33d53b0cf.png",
-            "size": "large",
-            "title": "روب العرائس",
-            "description": "<p>تفاصيل ناعمة تليق ببداية جديدة.. خفيف، أنثوي، ومصنوع بحب.</p>",
-            "text_alignment": "bottom-start",
-            "button_label": "",
-            "link": ""
-          }
-        },
         "banner_rKLq8t": {
           "type": "banner",
           "settings": {
@@ -201,11 +189,23 @@
             "button_label": "",
             "link": ""
           }
+        },
+        "banner_FwhpPf": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/763e5a00a4686a243b4c6dbd62bbb5a33d53b0cf.png",
+            "size": "large",
+            "title": "روب العرائس",
+            "description": "<p>تفاصيل ناعمة تليق ببداية جديدة.. خفيف، أنثوي، ومصنوع بحب.</p>",
+            "text_alignment": "bottom-start",
+            "button_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "banner_FwhpPf",
-        "banner_rKLq8t"
+        "banner_rKLq8t",
+        "banner_FwhpPf"
       ],
       "name": "t:sections.image-banners.presets.name",
       "settings": {
