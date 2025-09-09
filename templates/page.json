@@ -17,201 +17,71 @@
         "padding_bottom": 28
       }
     },
-    "page_intro_TgMaW8": {
-      "type": "page-intro",
-      "name": "Page Intro",
-      "settings": {
-        "heading": "فخامــــة تنبـــــع مـــن الهـــدوء",
-        "heading_size": "h1",
-        "heading_alignment": "start",
-        "description": "<p>نصنع العباءة كما يصنع الشاعر القصيدة - بصبر، بحب، وبتفاصيل تحكي حكاية كل امرأة ترتديها. كل قطعة هي رسالة صامتة، تتحدث بلغة الجمال والكرامة.</p>",
-        "description_style": "body",
-        "description_alignment": "start",
-        "banner_image": "shopify://shop_images/Frame_1261154067.png",
-        "image_height": "medium",
-        "image_behavior": "none",
-        "image_overlay_opacity": 0,
-        "secondary_description": "<p>في عالم يعج بالضوضاء، اخترنا الصمت. في زمن التعقيد، آمنا بالبساطة. أوليل ليست مجرد علامة أزياء، بل فلسفة تعيد تعريف الأناقة من منظور جديد.</p>",
-        "secondary_description_style": "body",
-        "secondary_description_alignment": "end",
-        "color_scheme": "",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "multicolumn_cards_6CbyWM": {
-      "type": "multicolumn-cards",
+    "collapsible_content_zrYAx9": {
+      "type": "collapsible-content",
       "blocks": {
-        "card_8cefby": {
-          "type": "card",
+        "collapsible_row_tGAXxW": {
+          "type": "collapsible_row",
           "settings": {
-            "image": "shopify://shop_images/54d62a05ac00f7b05bb5620b2167145424ec3e79.jpg",
-            "title": "أجــود الخــامـــات  مختــــــارة بعنايــــــــــة",
-            "description": "<p>نختار أجود الأقمشة من بيوت النسيج العريقة، حيث تلتقي النعومة بالمتانة</p>",
-            "card_style": "image-first"
+            "heading": "كيف يمكنني معرفة مقاسي المناسب؟",
+            "icon": "none",
+            "row_content": "<p>نوفّر لكِ دليل مقاسات شامل في صفحة كل منتج، بالإضافة إلى إرشادات دقيقة لمساعدتك في الاختيار بكل ثقة.</p>",
+            "page": ""
           }
         },
-        "card_ycnraB": {
-          "type": "card",
+        "collapsible_row_XExjdr": {
+          "type": "collapsible_row",
           "settings": {
-            "image": "shopify://shop_images/1fb8b2ee204c0a91612d75e13ba425fc9f3183dc.png",
-            "title": "تفاصيــــل مستوحـــــاة  مــن التـــــراث",
-            "description": "<p>كل تطريز يحمل ذاكرة الأجداد، وكل زخرفة تروي حكاية عريقة بلمسة عصرية</p>",
-            "card_style": "content-first"
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
           }
         },
-        "card_gjeTBA": {
-          "type": "card",
+        "collapsible_row_GRCC9C": {
+          "type": "collapsible_row",
           "settings": {
-            "image": "shopify://shop_images/709aa38544959d48b50a7600915b89a9cead02a3.png",
-            "title": "تصميم محلـــــــي  بخياطـــة متقنـــــــــــــة",
-            "description": "<p>أيادي ماهرة سعودية تصنع كل قطعة بدقة، تحافظ على الهوية وتحتضن الحداثة</p>",
-            "card_style": "image-first"
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_gURLgG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
           }
         }
       },
       "block_order": [
-        "card_8cefby",
-        "card_ycnraB",
-        "card_gjeTBA"
+        "collapsible_row_tGAXxW",
+        "collapsible_row_XExjdr",
+        "collapsible_row_GRCC9C",
+        "collapsible_row_gURLgG"
       ],
-      "name": "Multicolumn Cards",
+      "name": "t:sections.collapsible_content.presets.name",
       "settings": {
-        "title": "تفاصيل تصنع الفارق",
-        "description": "<p>في كل خيط نسجناه، في كل تطريز أضفناه، نحكي قصة الحرفية التي توارثناها عبر الأجيال</p>",
+        "caption": "",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
         "heading_alignment": "center",
-        "heading_size": "h1",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
+        "layout": "none",
+        "container_color_scheme": "",
         "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "button_label": "",
-        "button_link": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
         "padding_top": 36,
-        "padding_bottom": 60
-      }
-    },
-    "logos_marquee_G4hxNp": {
-      "type": "logos-marquee",
-      "blocks": {
-        "logo_wYaRky": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Logo.png",
-            "logo_name": "",
-            "link": ""
-          }
-        },
-        "logo_DrLKmD": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Logo.png",
-            "logo_name": "",
-            "link": ""
-          }
-        },
-        "logo_FaVLAD": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Logo.png",
-            "logo_name": "",
-            "link": ""
-          }
-        },
-        "logo_Dzy6jV": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Logo.png",
-            "logo_name": "",
-            "link": ""
-          }
-        },
-        "logo_dY99ax": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Logo.png",
-            "logo_name": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_wYaRky",
-        "logo_DrLKmD",
-        "logo_FaVLAD",
-        "logo_Dzy6jV",
-        "logo_dY99ax"
-      ],
-      "name": "Logos Marquee",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "logo_width": 120,
-        "logo_spacing": 32,
-        "marquee_speed": 50,
-        "marquee_direction": "left",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 60
-      }
-    },
-    "image_with_text_mBgq7i": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_TFW8bP": {
-          "type": "heading",
-          "settings": {
-            "heading": "امـــرأة أوليــــــــــل",
-            "heading_size": "h1"
-          }
-        },
-        "text_RJw8BE": {
-          "type": "text",
-          "settings": {
-            "text": "<p>هي التي تعرف قيمة الصمت في عالم مليء بالضجيج. هي التي تختار البساطة في زمن التعقيد. امرأة واثقة من جمالها الداخلي، لا تحتاج للإفراط كي تلفت الأنظار.<br/><br/>تدرك أن الأناقة الحقيقية تكمن في التفاصيل الخفية، في نعومة القماش، في دقة القصة، في طريقة انسياب العباءة مع خطواتها الواثقة.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_LqaJKy": {
-          "type": "button",
-          "settings": {
-            "button_label": "تصفّحي التشكيلة",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_TFW8bP",
-        "text_RJw8BE",
-        "button_LqaJKy"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/a7086462f60a4128776ea416650cfe479463c38d.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 60,
         "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "page_intro_TgMaW8",
-    "multicolumn_cards_6CbyWM",
-    "logos_marquee_G4hxNp",
-    "image_with_text_mBgq7i"
+    "collapsible_content_zrYAx9"
   ]
 }
