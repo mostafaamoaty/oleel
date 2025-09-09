@@ -32,41 +32,21 @@
         "collapsible_row_XExjdr": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "ما هي خيارات الدفع المتاحة؟",
             "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_GRCC9C": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_gURLgG": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "none",
-            "row_content": "",
+            "row_content": "<p>نوفّر لكِ دليل مقاسات شامل في صفحة كل منتج، بالإضافة إلى إرشادات دقيقة لمساعدتك في الاختيار بكل ثقة.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
         "collapsible_row_tGAXxW",
-        "collapsible_row_XExjdr",
-        "collapsible_row_GRCC9C",
-        "collapsible_row_gURLgG"
+        "collapsible_row_XExjdr"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
+        "heading": "",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
