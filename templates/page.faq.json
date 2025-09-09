@@ -18,6 +18,7 @@
     },
     "page_intro_TgMaW8": {
       "type": "page-intro",
+      "disabled": true,
       "name": "Page Intro",
       "settings": {
         "heading": "فخامــــة تنبـــــع مـــن الهـــدوء",
@@ -74,6 +75,7 @@
         "card_ycnraB",
         "card_gjeTBA"
       ],
+      "disabled": true,
       "name": "Multicolumn Cards",
       "settings": {
         "title": "تفاصيل تصنع الفارق",
@@ -144,6 +146,7 @@
         "logo_Dzy6jV",
         "logo_dY99ax"
       ],
+      "disabled": true,
       "name": "Logos Marquee",
       "settings": {
         "heading": "",
@@ -188,6 +191,7 @@
         "text_RJw8BE",
         "button_LqaJKy"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/a7086462f60a4128776ea416650cfe479463c38d.png",
