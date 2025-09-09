@@ -3533,9 +3533,13 @@
       "next": "الصفحة التالية",
       "previous": "الصفحة السابقة"
     },
+    "breadcrumbs": {
+      "label": "التنقل عبر المسار"
+    },
     "search": {
       "reset": "مسح مصطلح البحث",
-      "search": "يبحث"
+      "search": "يبحث",
+      "results_with_count": "{{ count }} نتيجة لـ \"{{ terms }}\""
     },
     "cart": {
       "view": "عرض عربة التسوق ( {{ count }} )",

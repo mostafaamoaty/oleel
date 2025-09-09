@@ -1,0 +1,322 @@
+{{ 'section-breadcrumbs.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .breadcrumbs[data-section-id="{{ section.id }}"] {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .breadcrumbs[data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign breadcrumb_separator = section.settings.separator | default: '>'
+  assign show_home_link = section.settings.show_home_link
+  assign home_text = section.settings.home_text | default: 'Home'
+  assign alignment = section.settings.alignment | default: 'start'
+
+  # RTL separator logic
+  if shop.locale == 'ar'
+    if breadcrumb_separator == '>'
+      assign breadcrumb_separator = '<'
+    elsif breadcrumb_separator == '<'
+      assign breadcrumb_separator = '>'
+    elsif breadcrumb_separator == '→'
+      assign breadcrumb_separator = '←'
+    elsif breadcrumb_separator == '←'
+      assign breadcrumb_separator = '→'
+    elsif breadcrumb_separator == '»'
+      assign breadcrumb_separator = '«'
+    elsif breadcrumb_separator == '«'
+      assign breadcrumb_separator = '»'
+    elsif breadcrumb_separator == '›'
+      assign breadcrumb_separator = '‹'
+    elsif breadcrumb_separator == '‹'
+      assign breadcrumb_separator = '›'
+    endif
+  endif
+-%}
+
+<nav
+  class="breadcrumbs color-{{ section.settings.color_scheme }} gradient"
+  data-section-id="{{ section.id }}"
+  aria-label="{{ 'general.breadcrumbs.label' | t }}"
+>
+  <div class="page-width">
+    <ol
+      class="breadcrumbs__list breadcrumbs__list--{{ alignment }}"
+      itemscope
+      itemtype="https://schema.org/BreadcrumbList"
+    >
+      {%- if show_home_link -%}
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ routes.root_url }}" class="breadcrumbs__link" itemprop="item">
+            <span itemprop="name">{{ home_text }}</span>
+          </a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li class="breadcrumbs__separator" aria-hidden="true">{{ breadcrumb_separator }}</li>
+      {%- endif -%}
+
+      {%- if template contains 'product' -%}
+        {%- if collection -%}
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ collection.url }}" class="breadcrumbs__link" itemprop="item">
+              <span itemprop="name">{{ collection.title }}</span>
+            </a>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+          <li class="breadcrumbs__separator" aria-hidden="true">{{ breadcrumb_separator }}</li>
+        {%- endif -%}
+        <li
+          class="breadcrumbs__item breadcrumbs__item--current"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">{{ product.title }}</span>
+          <meta
+            itemprop="position"
+            content="{% if show_home_link %}{% if collection %}3{% else %}2{% endif %}{% else %}{% if collection %}2{% else %}1{% endif %}{% endif %}"
+          >
+        </li>
+
+      {%- elsif template contains 'collection' -%}
+        {%- if collection.handle != 'all' -%}
+          <li
+            class="breadcrumbs__item breadcrumbs__item--current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{{ collection.title }}</span>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+        {%- endif -%}
+
+      {%- elsif template contains 'blog' -%}
+        <li
+          class="breadcrumbs__item breadcrumbs__item--current"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">{{ blog.title }}</span>
+          <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+        </li>
+
+      {%- elsif template contains 'article' -%}
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ blog.url }}" class="breadcrumbs__link" itemprop="item">
+            <span itemprop="name">{{ blog.title }}</span>
+          </a>
+          <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+        </li>
+        <li class="breadcrumbs__separator" aria-hidden="true">{{ breadcrumb_separator }}</li>
+        <li
+          class="breadcrumbs__item breadcrumbs__item--current"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">{{ article.title }}</span>
+          <meta itemprop="position" content="{% if show_home_link %}3{% else %}2{% endif %}">
+        </li>
+
+      {%- elsif template contains 'page' -%}
+        <li
+          class="breadcrumbs__item breadcrumbs__item--current"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">{{ page.title }}</span>
+          <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+        </li>
+
+      {%- elsif template contains 'search' -%}
+        <li
+          class="breadcrumbs__item breadcrumbs__item--current"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">
+            {{- 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count -}}
+          </span>
+          <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+        </li>
+
+      {%- elsif template contains 'cart' -%}
+        <li
+          class="breadcrumbs__item breadcrumbs__item--current"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">{{ 'sections.cart.title' | t }}</span>
+          <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+        </li>
+
+      {%- elsif template contains 'customers' -%}
+        {%- if template contains 'account' -%}
+          <li
+            class="breadcrumbs__item breadcrumbs__item--current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{{ 'customer.account.title' | t }}</span>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+        {%- elsif template contains 'login' -%}
+          <li
+            class="breadcrumbs__item breadcrumbs__item--current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{{ 'customer.login_page.title' | t }}</span>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+        {%- elsif template contains 'register' -%}
+          <li
+            class="breadcrumbs__item breadcrumbs__item--current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{{ 'customer.register.title' | t }}</span>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+        {%- elsif template contains 'addresses' -%}
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ routes.account_url }}" class="breadcrumbs__link" itemprop="item">
+              <span itemprop="name">{{ 'customer.account.title' | t }}</span>
+            </a>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+          <li class="breadcrumbs__separator" aria-hidden="true">{{ breadcrumb_separator }}</li>
+          <li
+            class="breadcrumbs__item breadcrumbs__item--current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{{ 'customer.addresses.title' | t }}</span>
+            <meta itemprop="position" content="{% if show_home_link %}3{% else %}2{% endif %}">
+          </li>
+        {%- elsif template contains 'order' -%}
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ routes.account_url }}" class="breadcrumbs__link" itemprop="item">
+              <span itemprop="name">{{ 'customer.account.title' | t }}</span>
+            </a>
+            <meta itemprop="position" content="{% if show_home_link %}2{% else %}1{% endif %}">
+          </li>
+          <li class="breadcrumbs__separator" aria-hidden="true">{{ breadcrumb_separator }}</li>
+          <li
+            class="breadcrumbs__item breadcrumbs__item--current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{{ 'customer.orders.title' | t }}</span>
+            <meta itemprop="position" content="{% if show_home_link %}3{% else %}2{% endif %}">
+          </li>
+        {%- endif -%}
+      {%- endif -%}
+    </ol>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Breadcrumbs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.breadcrumbs.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_home_link",
+      "default": true,
+      "label": "t:sections.breadcrumbs.settings.show_home_link.label"
+    },
+    {
+      "type": "text",
+      "id": "home_text",
+      "default": "Home",
+      "label": "t:sections.breadcrumbs.settings.home_text.label"
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "default": ">",
+      "label": "t:sections.breadcrumbs.settings.separator.label"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:sections.breadcrumbs.settings.alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.breadcrumbs.settings.alignment.options__2.label"
+        },
+        {
+          "value": "end",
+          "label": "t:sections.breadcrumbs.settings.alignment.options__3.label"
+        }
+      ],
+      "default": "start",
+      "label": "t:sections.breadcrumbs.settings.alignment.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Breadcrumbs"
+    }
+  ]
+}
+{% endschema %}

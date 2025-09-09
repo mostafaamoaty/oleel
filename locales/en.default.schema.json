@@ -514,6 +514,38 @@
         "name": "Announcement bar"
       }
     },
+    "breadcrumbs": {
+      "name": "Breadcrumbs",
+      "settings": {
+        "header": {
+          "content": "Breadcrumb settings"
+        },
+        "show_home_link": {
+          "label": "Show home link"
+        },
+        "home_text": {
+          "label": "Home link text"
+        },
+        "separator": {
+          "label": "Separator"
+        },
+        "alignment": {
+          "label": "Alignment",
+          "options__1": {
+            "label": "Start"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "End"
+          }
+        }
+      },
+      "presets": {
+        "name": "Breadcrumbs"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {

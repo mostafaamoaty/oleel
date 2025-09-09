@@ -1,0 +1,179 @@
+/* Breadcrumbs Section Styles */
+
+.breadcrumbs {
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  justify-content: var(--breadcrumb-alignment, flex-start);
+  gap: 0.8rem;
+}
+
+/* Alignment classes */
+.breadcrumbs__list--start {
+  justify-content: flex-start;
+}
+
+.breadcrumbs__list--center {
+  justify-content: center;
+}
+
+.breadcrumbs__list--end {
+  justify-content: flex-end;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Spacing handled by gap property - works consistently in both LTR and RTL */
+
+.breadcrumbs__link {
+  color: rgba(var(--color-foreground), 0.75);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs__link:hover {
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+}
+
+.breadcrumbs__link:focus {
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline-offset: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.breadcrumbs__item--current {
+  color: rgb(var(--color-foreground));
+  font-weight: 500;
+}
+
+.breadcrumbs__separator {
+  color: rgba(var(--color-foreground), 0.5);
+  font-weight: 400;
+  user-select: none;
+}
+
+/* Alignment classes */
+.breadcrumbs__list--start {
+  justify-content: flex-start;
+}
+
+.breadcrumbs__list--center {
+  justify-content: center;
+}
+
+.breadcrumbs__list--end {
+  justify-content: flex-end;
+}
+
+/* RTL Support */
+/* 
+ * RTL Implementation:
+ * 1. RTL naturally flows right-to-left, no flex direction reversal needed
+ * 2. Uses CSS gap property for consistent spacing in both LTR and RTL
+ * 3. Alignment classes work naturally in RTL context
+ * 4. Separator direction is handled in Liquid template logic
+ * 5. Individual items maintain normal order (link then separator)
+ * 6. Separator icons are visually reversed with transform: scaleX(-1)
+ * 7. Text direction is handled by HTML dir="rtl" attribute
+ */
+[dir="rtl"] .breadcrumbs__list {
+  /* RTL naturally flows right-to-left, no need to reverse flex direction */
+}
+
+[dir="rtl"] .breadcrumbs__item {
+  display: flex;
+  align-items: center;
+}
+
+[dir="rtl"] .breadcrumbs__separator {
+  transform: scaleX(-1);
+}
+
+/* RTL alignment adjustments */
+[dir="rtl"] .breadcrumbs__list--start {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .breadcrumbs__list--end {
+  justify-content: flex-end;
+}
+
+/* RTL text direction is handled by HTML dir="rtl" attribute */
+
+/* Responsive Design */
+@media screen and (max-width: 749px) {
+  .breadcrumbs__list {
+    font-size: 1.2rem;
+    gap: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .breadcrumbs__list {
+    font-size: 1.1rem;
+    gap: 0.4rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .breadcrumbs__link {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .breadcrumbs__link {
+    text-decoration: underline;
+    color: rgb(var(--color-foreground));
+  }
+  
+  .breadcrumbs__link:hover {
+    text-decoration: none;
+  }
+  
+  .breadcrumbs__item--current {
+    color: rgb(var(--color-foreground));
+    font-weight: 700;
+  }
+  
+  .breadcrumbs__separator {
+    color: rgb(var(--color-foreground));
+  }
+}
+
+/* Print styles */
+@media print {
+  .breadcrumbs {
+    background: none !important;
+    color: #000 !important;
+  }
+  
+  .breadcrumbs__link {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+  
+  .breadcrumbs__separator {
+    color: #000 !important;
+  }
+}
+

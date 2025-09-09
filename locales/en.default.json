@@ -46,9 +46,13 @@
       "next": "Next page",
       "previous": "Previous page"
     },
+    "breadcrumbs": {
+      "label": "Breadcrumb navigation"
+    },
     "search": {
       "search": "Search",
-      "reset": "Clear search term"
+      "reset": "Clear search term",
+      "results_with_count": "{{ count }} results for \"{{ terms }}\""
     },
     "cart": {
       "view": "View cart ({{ count }})",

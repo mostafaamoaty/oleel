@@ -10,7 +10,8 @@
   flex: 1;
 }
 
-.accordion .summary__title + .icon-caret {
+.accordion .summary__title + .icon-caret,
+.accordion .accordion-toggle-icon {
   height: calc(var(--font-heading-scale) * 0.6rem);
 }
 
@@ -44,6 +45,56 @@
 
 .accordion details[open] > summary .icon-caret {
   transform: rotate(180deg);
+}
+
+/* Plus/Minus icon transitions */
+.accordion-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  align-self: center;
+}
+
+.accordion-toggle-icon svg {
+  transition: all 0.3s ease;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  color: #000000;
+  fill: #000000;
+}
+
+/* Hide plus icon when expanded */
+.accordion details[open] > summary .accordion-toggle-icon .icon-plus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+/* Show minus icon when expanded */
+.accordion details[open] > summary .accordion-toggle-icon .icon-minus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Initially hide minus icon */
+.accordion-toggle-icon .icon-minus {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+/* RTL Support */
+[dir="rtl"] .accordion-toggle-icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .accordion .svg-wrapper {
+  margin-right: 0;
+  margin-left: calc(var(--font-heading-scale) * 1rem);
 }
 
 .accordion__content {
