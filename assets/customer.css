@@ -25,6 +25,67 @@
   margin: 4rem 0 1.5rem;
 }
 
+/* Login form specific styling */
+.customer.login > h1 {
+  text-align: start;
+}
+
+.customer.login form a[href="#recover"] {
+  text-align: end;
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.customer.login button {
+  width: 100%;
+}
+
+.customer.login form a[href="{{ routes.account_register_url }}"] {
+  text-align: start !important;
+  display: block !important;
+  margin-top: 1rem;
+  width: 100% !important;
+  color: rgba(var(--color-foreground), 0.75);
+  text-decoration: none;
+}
+
+/* Alternative selector for create account link */
+.customer.login a:last-of-type {
+  text-align: start !important;
+  display: block !important;
+  width: 100% !important;
+  text-decoration: none !important;
+}
+
+/* Register form specific styling */
+.customer.register > h1 {
+  text-align: start;
+}
+
+.customer.register button {
+  width: 100%;
+}
+
+.customer.register form a[href="{{ routes.account_login_url }}"] {
+  text-align: start !important;
+  display: block !important;
+  margin-top: 1rem;
+  width: 100% !important;
+  color: rgba(var(--color-foreground), 0.75);
+  text-decoration: none !important;
+}
+
+/* Alternative selector for sign in link */
+.customer.register a:last-of-type {
+  text-align: start !important;
+  display: block !important;
+  width: 100% !important;
+  text-decoration: none !important;
+}
+
 .customer ul {
   line-height: calc(1 + 0.6 / var(--font-body-scale));
   padding-left: 4.4rem;

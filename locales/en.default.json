@@ -500,7 +500,8 @@
       "last_name": "Last name",
       "email": "Email",
       "password": "Password",
-      "submit": "Create"
+      "submit": "Create",
+      "sign_in_link": "Already have an account? Sign in"
     },
     "reset_password": {
       "title": "Reset account password",

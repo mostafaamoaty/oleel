@@ -10,6 +10,26 @@
   margin-top: 0.2rem;
 }
 
+/* Contact form container styling to match login/register forms */
+.contact.page-width--narrow {
+  margin: 0 auto;
+  max-width: 33.4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .contact.page-width--narrow {
+    max-width: 47.8rem;
+  }
+}
+
+/* Contact form heading alignment */
+.contact h2.title {
+  text-align: start;
+}
+
 .contact .field {
   margin-bottom: 1.5rem;
 }
@@ -18,6 +38,11 @@
   .contact .field {
     margin-bottom: 2rem;
   }
+}
+
+/* Remove grid layout - each field on separate row */
+.contact__fields {
+  display: block;
 }
 
 .contact__button {
@@ -30,10 +55,7 @@
   }
 }
 
-@media screen and (min-width: 750px) {
-  .contact__fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-  }
+/* Full width button */
+.contact__button .button {
+  width: 100%;
 }

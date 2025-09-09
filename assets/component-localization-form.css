@@ -492,23 +492,25 @@
   gap: 0.5rem;
 }
 
-/* Remove borders from footer localization dropdowns */
-.footer .localization-form__select::after {
+/* Remove borders from all localization dropdowns */
+.localization-form__select::after {
   box-shadow: none !important;
   border: none !important;
+  background-color: transparent !important;
 }
 
-.footer .localization-form__select:hover::after,
-.footer .localization-form__select:focus::after,
-.footer .localization-form__select:focus-visible::after {
+.localization-form__select:hover::after,
+.localization-form__select:focus::after,
+.localization-form__select:focus-visible::after {
   box-shadow: none !important;
   border: none !important;
+  background-color: transparent !important;
 }
 
-.footer .localization-form__select,
-.footer .localization-form__select:hover,
-.footer .localization-form__select:focus,
-.footer .localization-form__select:focus-visible {
+.localization-form__select,
+.localization-form__select:hover,
+.localization-form__select:focus,
+.localization-form__select:focus-visible {
   box-shadow: none !important;
   border: none !important;
 }
