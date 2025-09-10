@@ -102,7 +102,7 @@
     "drawer_shadow_blur": 5,
     "badge_position": "top left",
     "badge_corner_radius": 0,
-    "sale_badge_color_scheme": "scheme-5",
+    "sale_badge_color_scheme": "scheme-3d0e6dcf-10c2-4d76-a117-6a327a354f1c",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_description": "<p>تصاميم مستوحاة من تفاصيلك، ممزوجة بأجود الخامات، مصنوعة بشغف.. لك أنت خصيصًا، جرب الفخامة اللي تستحقها الآن.</p>",
     "brand_image": "shopify://shop_images/Logo.svg",
@@ -213,6 +213,17 @@
           "background": "#ffffff",
           "background_gradient": "",
           "text": "#ffffff",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-3d0e6dcf-10c2-4d76-a117-6a327a354f1c": {
+        "settings": {
+          "background": "#e8e0d7",
+          "background_gradient": "",
+          "text": "#121212",
           "button": "#121212",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",
