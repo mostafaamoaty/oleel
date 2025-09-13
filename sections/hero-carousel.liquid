@@ -31,7 +31,7 @@
         }}
 
         <!-- Hero Navigation Arrows - Control Cards -->
-        <div class="hero-carousel__hero-navigation">
+        <div class="hero-carousel__hero-navigation page-width">
           <button
             type="button"
             class="hero-carousel__nav-button hero-carousel__nav-button--prev"
@@ -51,24 +51,25 @@
         </div>
       </div>
     {%- endif -%}
-
-    <div class="hero-carousel__content hero-carousel__content--{{ section.settings.text_alignment }}">
-      {%- if section.settings.heading != blank -%}
-        <h1
-          class="hero-carousel__heading {{ section.settings.heading_size }}"
-          style="color: {{ section.settings.heading_color | default: '#ffffff' }};"
-        >
-          {{ section.settings.heading }}
-        </h1>
-      {%- endif -%}
-      {%- if section.settings.description != blank -%}
-        <div
-          class="hero-carousel__description rte"
-          style="color: {{ section.settings.description_color | default: '#ffffff' }};"
-        >
-          {{ section.settings.description }}
-        </div>
-      {%- endif -%}
+    <div class="hero-carousel__content_wrapper page-width">
+      <div class="hero-carousel__content hero-carousel__content--{{ section.settings.text_alignment }} page-width">
+        {%- if section.settings.heading != blank -%}
+          <h1
+            class="hero-carousel__heading {{ section.settings.heading_size }}"
+            style="color: {{ section.settings.heading_color | default: '#ffffff' }};"
+          >
+            {{ section.settings.heading }}
+          </h1>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <div
+            class="hero-carousel__description rte"
+            style="color: {{ section.settings.description_color | default: '#ffffff' }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
     </div>
   </div>
 

@@ -23,6 +23,18 @@
   flex-basis: 100%;
 }
 
+.collection-hero__text-wrapper.text-start {
+  text-align: start;
+}
+
+.collection-hero__text-wrapper.text-center {
+  text-align: center;
+}
+
+.collection-hero__text-wrapper.text-end {
+  text-align: end;
+}
+
 @media screen and (min-width: 750px) {
   .collection-hero {
     padding: 0;

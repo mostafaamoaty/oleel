@@ -25,7 +25,7 @@
   if localization.country.currency.iso_code == 'SAR'
     assign is_sar_currency = true
   endif
-  
+
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign price_min = product.price_min
@@ -49,8 +49,6 @@
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
-
-  
 -%}
 
 {%- unless target == null and placeholder == null -%}
@@ -131,7 +129,7 @@
                 {{ compare_at_price | money }}
               {% endif %}
               {%- if is_sar_currency -%}
-                <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span>
+                {% comment %} <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span> {% endcomment %}
               {%- endif -%}
             </s>
           </span>

@@ -3691,7 +3691,7 @@
       "clear_all": "إزالة الكل",
       "from": "من",
       "filter_and_sort": "التصفية والفرز",
-      "filter_by_label": "فلتر:",
+      "filter_by_label": "فلتر",
       "filter_button": "فلتر",
       "filters_selected": {
         "one": "تم اختيار {{ count }}",
@@ -3711,7 +3711,7 @@
       },
       "reset": "إعادة ضبط",
       "sort_button": "نوع",
-      "sort_by_label": "فرز حسب:",
+      "sort_by_label": "فرز حسب",
       "to": "ل",
       "clear_filter": "إزالة الفلتر"
     }

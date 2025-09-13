@@ -454,6 +454,18 @@
           "label": "Round"
         },
         "label": "Image shape"
+      },
+      "text_alignment": {
+        "label": "Text alignment",
+        "options__1": {
+          "label": "Start"
+        },
+        "options__2": {
+          "label": "Center"
+        },
+        "options__3": {
+          "label": "End"
+        }
       }
     },
     "announcement-bar": {
