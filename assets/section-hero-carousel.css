@@ -205,6 +205,12 @@
   fill: currentColor;
 }
 
+/* Override arrow color to white specifically in hero carousel */
+.hero-carousel__nav-button .svg-wrapper svg path {
+  fill: white !important;
+  stroke: white !important;
+}
+
 /* Hero section responsive styles */
 @media screen and (max-width: 1024px) {
   .hero-carousel__hero {
