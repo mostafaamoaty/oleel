@@ -187,7 +187,9 @@
             "description": "<p>قصّات ناعمة، خامات مختارة، وأناقة تنسدل بهدوء.</p>",
             "text_alignment": "bottom-start",
             "button_label": "",
-            "link": ""
+            "link": "",
+            "title_color": "#ffffff",
+            "description_color": "#ffffff"
           }
         },
         "banner_FwhpPf": {
@@ -199,7 +201,9 @@
             "description": "<p>تفاصيل ناعمة تليق ببداية جديدة.. خفيف، أنثوي، ومصنوع بحب.</p>",
             "text_alignment": "bottom-start",
             "button_label": "",
-            "link": ""
+            "link": "",
+            "title_color": "#ffffff",
+            "description_color": "#ffffff"
           }
         }
       },
@@ -217,6 +221,71 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "hero_carousel_tXqMpc": {
+      "type": "hero-carousel",
+      "blocks": {
+        "card_94fcCb": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/a7086462f60a4128776ea416650cfe479463c38d.png",
+            "title": "التصاميم الكلاسيكية",
+            "description": "<p>تصاميم خالدة بقصّات محافظة وأقمشة فاخرة تلائم العمل والمناسبات الرسمية.</p>",
+            "title_color": "#000000",
+            "description_color": "#666666"
+          }
+        },
+        "card_KBe7Rw": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/73a7da1d273e570a2f594ac32a1fefecf2183fb5.png",
+            "title": "التصاميم الكلاسيكية",
+            "description": "<p>تصاميم خالدة بقصّات محافظة وأقمشة فاخرة تلائم العمل والمناسبات الرسمية.</p>",
+            "title_color": "#000000",
+            "description_color": "#666666"
+          }
+        },
+        "card_Rej97x": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1fb8b2ee204c0a91612d75e13ba425fc9f3183dc.png",
+            "title": "التصاميم الكلاسيكية",
+            "description": "<p>تصاميم خالدة بقصّات محافظة وأقمشة فاخرة تلائم العمل والمناسبات الرسمية.</p>",
+            "title_color": "#000000",
+            "description_color": "#666666"
+          }
+        },
+        "card_wakiyV": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/709aa38544959d48b50a7600915b89a9cead02a3.png",
+            "title": "التصاميم الكلاسيكية",
+            "description": "<p>تصاميم خالدة بقصّات محافظة وأقمشة فاخرة تلائم العمل والمناسبات الرسمية.</p>",
+            "title_color": "#000000",
+            "description_color": "#666666"
+          }
+        }
+      },
+      "block_order": [
+        "card_94fcCb",
+        "card_KBe7Rw",
+        "card_Rej97x",
+        "card_wakiyV"
+      ],
+      "name": "Hero with Cards Carousel",
+      "settings": {
+        "hero_image": "shopify://shop_images/c792472fb0b66866b782c967a53d7e2f23953782.png",
+        "heading": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_alignment": "left",
+        "heading_color": "#ffffff",
+        "description_color": "#ffffff",
+        "overlay_opacity": 30,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -225,6 +294,7 @@
     "collage",
     "video",
     "multicolumn",
-    "image_banners_QhJeHQ"
+    "image_banners_QhJeHQ",
+    "hero_carousel_tXqMpc"
   ]
 }
