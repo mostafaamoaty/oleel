@@ -9,7 +9,7 @@ cart-items .title-wrapper-with-link {
 }
 
 .cart-items th {
-  text-align: left;
+  text-align: start;
   padding-bottom: 1.8rem;
   opacity: 0.85;
   font-weight: normal;
@@ -24,7 +24,7 @@ cart-items .title-wrapper-with-link {
 }
 
 .cart-items *.right {
-  text-align: right;
+  text-align: end;
 }
 
 .cart-item__image-container {
@@ -87,6 +87,7 @@ cart-items .title-wrapper-with-link {
 .cart-item__name {
   text-decoration: none;
   display: block;
+  font-family: "IBMPlexSansArabic-SemiBold";
 }
 
 .cart-item__name:hover {
@@ -121,11 +122,13 @@ cart-items .title-wrapper-with-link {
   font-size: 1.4rem;
   word-break: break-word;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
+  display: flex;
 }
 
 .cart-item cart-remove-button {
   display: flex;
-  margin-left: 1rem;
+  justify-content: end;
+  margin-inline-start: 1rem;
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -311,7 +314,7 @@ cart-remove-button .icon-remove {
   }
 
   .cart-item > td + td {
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
   }
 
   .cart-item__details {
@@ -358,6 +361,25 @@ cart-remove-button .icon-remove {
   .cart-item__quantity--info .cart-items__info {
     padding-left: 0;
   }
+}
+
+/* Custom quantity input border */
+.cart-items .quantity:after {
+  box-shadow: 0 0 0 1px rgba(34, 30, 31, 0.1);
+}
+
+/* Cart item separator */
+.cart-items .cart-item:not(:last-child) {
+  border-bottom: 1px solid rgba(233, 233, 233, 1);
+}
+
+/* Cart remove button hover effect */
+.cart-items .cart-remove-button svg path {
+  transition: stroke 0.3s ease;
+}
+
+.cart-items .cart-remove-button:hover svg path {
+  stroke: #000000;
 }
 
 @media screen and (max-width: 989px) {

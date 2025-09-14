@@ -34,15 +34,29 @@
   assign money_price = price | money
   assign money_price_min = price_min | money
   assign money_price_max = price_max | money
+
+  # Remove .00 decimals from prices
+  assign money_price = money_price | replace: '.00', ''
+  assign money_price_min = money_price_min | replace: '.00', ''
+  assign money_price_max = money_price_max | replace: '.00', ''
+
   if settings.currency_code_enabled
     if is_sar_currency
       assign money_price = price | money_without_currency
       assign money_price_min = price_min | money_without_currency
       assign money_price_max = price_max | money_without_currency
+      # Remove .00 decimals from SAR prices
+      assign money_price = money_price | replace: '.00', ''
+      assign money_price_min = money_price_min | replace: '.00', ''
+      assign money_price_max = money_price_max | replace: '.00', ''
     else
       assign money_price = price | money_with_currency
       assign money_price_min = price_min | money_with_currency
       assign money_price_max = price_max | money_with_currency
+      # Remove .00 decimals from currency prices
+      assign money_price = money_price | replace: '.00', ''
+      assign money_price_min = money_price_min | replace: '.00', ''
+      assign money_price_max = money_price_max | replace: '.00', ''
     endif
   endif
 
@@ -80,12 +94,18 @@
                 <s class="price-item price-item--regular variant-item__old-price">
                   {% if settings.currency_code_enabled %}
                     {% if is_sar_currency %}
-                      {{ compare_at_price | money_without_currency }}
+                      {% assign compare_price_formatted = compare_at_price
+                        | money_without_currency
+                        | replace: '.00', ''
+                      %}
+                      {{ compare_price_formatted }}
                     {% else %}
-                      {{ compare_at_price | money_with_currency }}
+                      {% assign compare_price_formatted = compare_at_price | money_with_currency | replace: '.00', '' %}
+                      {{ compare_price_formatted }}
                     {% endif %}
                   {% else %}
-                    {{ compare_at_price | money }}
+                    {% assign compare_price_formatted = compare_at_price | money | replace: '.00', '' %}
+                    {{ compare_price_formatted }}
                   {% endif %}
                   {%- if is_sar_currency -%}
                     <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span>
@@ -121,12 +141,15 @@
             <s class="price-item price-item--regular">
               {% if settings.currency_code_enabled %}
                 {% if is_sar_currency %}
-                  {{ compare_at_price | money_without_currency }}
+                  {% assign compare_price_formatted = compare_at_price | money_without_currency | replace: '.00', '' %}
+                  {{ compare_price_formatted }}
                 {% else %}
-                  {{ compare_at_price | money_with_currency }}
+                  {% assign compare_price_formatted = compare_at_price | money_with_currency | replace: '.00', '' %}
+                  {{ compare_price_formatted }}
                 {% endif %}
               {% else %}
-                {{ compare_at_price | money }}
+                {% assign compare_price_formatted = compare_at_price | money | replace: '.00', '' %}
+                {{ compare_price_formatted }}
               {% endif %}
               {%- if is_sar_currency -%}
                 {% comment %} <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span> {% endcomment %}

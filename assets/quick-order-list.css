@@ -655,3 +655,12 @@ quick-order-list .tax-note {
   display: block;
   width: 100%;
 }
+
+/* Quick order list remove button hover effect */
+quick-order-list .button--tertiary svg path {
+  transition: stroke 0.3s ease;
+}
+
+quick-order-list .button--tertiary:hover svg path {
+  stroke: #000000;
+}

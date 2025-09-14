@@ -17,9 +17,9 @@
 
 .drawer__inner {
   height: 100%;
-  width: 40rem;
+  width: 45rem;
   max-width: calc(100vw - 3rem);
-  padding: 0 1.5rem;
+  padding: 0 3rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-right: 0;
   overflow: hidden;
@@ -74,7 +74,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 
 .drawer__header {
   position: relative;
-  padding: 1.5rem 0;
+  padding: 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,8 +91,8 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   min-height: 4.4rem;
   box-shadow: 0 0 0 0.2rem rgba(var(--color-button), 0);
   position: absolute;
-  top: 10px;
-  right: -10px;
+  top: 20px;
+  inset-inline-end: -10px;
   color: rgb(var(--color-foreground));
   background-color: transparent;
   border: none;
@@ -208,6 +208,7 @@ cart-drawer-items {
   grid-template: repeat(2, auto) / repeat(4, 1fr);
   gap: 1rem;
   margin-bottom: 0;
+  padding-bottom: 1rem;
 }
 
 .cart-drawer .cart-item:last-child {
@@ -269,7 +270,7 @@ cart-drawer-items {
 }
 
 .cart-drawer .cart-item > td + td {
-  padding-left: 1rem;
+  padding-inline-start: 1rem;
 }
 
 .cart-drawer .cart-item__details {
@@ -305,8 +306,12 @@ cart-drawer-items {
 
 @media screen and (max-width: 749px) {
   .cart-drawer .cart-item cart-remove-button {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
+}
+
+.cart-drawer .cart-item .cart-item__remove {
+  padding-inline-start: 0;
 }
 
 .cart-drawer__footer > * + * {
@@ -319,11 +324,15 @@ cart-drawer-items {
 
 .cart-drawer .price {
   line-height: 1;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-family: "IBMPlexSansArabic-SemiBold";
 }
 
 .cart-drawer .tax-note {
   margin: 1.2rem 0 2rem auto;
-  text-align: left;
+  text-align: start;
 }
 
 .cart-drawer .product-option dd {
@@ -405,6 +414,20 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
 
 .cart-drawer .quantity-popover__info + .cart-item__error {
   margin-top: 0.2rem;
+}
+
+/* Custom quantity input border */
+.cart-drawer .quantity:after {
+  box-shadow: 0 0 0 1px rgba(34, 30, 31, 0.1);
+}
+
+/* Cart remove button hover effect */
+.cart-drawer .cart-remove-button svg path {
+  transition: stroke 0.3s ease;
+}
+
+.cart-drawer .cart-remove-button:hover svg path {
+  stroke: #000000;
 }
 
 @media screen and (min-width: 750px) {

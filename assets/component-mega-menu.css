@@ -48,8 +48,21 @@
   padding-bottom: 0.6rem;
   padding-top: 0.6rem;
   text-decoration: none;
-  transition: text-decoration var(--duration-short) ease;
+  position: relative;
+  transition: color var(--duration-short) ease;
   word-wrap: break-word;
+}
+
+.mega-menu__link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0.3rem;
+  left: 0;
+  background-color: currentColor;
+  transition: width var(--duration-default) ease;
+  transform-origin: left;
 }
 
 .mega-menu__link--level-2 {
@@ -68,14 +81,18 @@
   padding-right: 2.4rem;
 }
 
+.mega-menu__link:hover::after,
+.mega-menu__link--active::after {
+  width: 100%;
+}
+
 .mega-menu__link:hover,
 .mega-menu__link--active {
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
 }
 
-.mega-menu__link--active:hover {
-  text-decoration-thickness: 0.2rem;
+.mega-menu__link--active:hover::after {
+  height: 3px;
 }
 
 .mega-menu .mega-menu__list--condensed {

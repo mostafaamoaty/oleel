@@ -18,7 +18,7 @@
 }
 
 .totals > * + * {
-  margin-left: 2rem;
+  margin-inline-start: 2rem;
 }
 
 .totals__total {
@@ -26,7 +26,11 @@
 }
 
 .totals__total-value {
+  font-family: "IBMPlexSansArabic-SemiBold";
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
 .cart__ctas + .totals {

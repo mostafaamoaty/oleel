@@ -271,6 +271,47 @@
 }
 .card__buttons {
   grid-row-start: 4;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeOutButtons 0.3s ease forwards;
+  position: relative;
+  z-index: 20;
+}
+
+/* Show quick add buttons on card hover */
+.product-card-wrapper:hover .card__buttons {
+  animation: fadeInButtons 0.3s ease forwards;
+}
+
+/* Keyframe animations for smooth blur transitions */
+@keyframes fadeInButtons {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+@keyframes fadeOutButtons {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
 }
 
 .card__badge {
@@ -278,6 +319,85 @@
   grid-row-start: 3;
   justify-self: flex-start;
 }
+
+/* Quick View Button */
+.card__quick-view {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 25;
+  opacity: 0;
+  animation: fadeOutQuickView 0.3s ease forwards;
+}
+
+/* RTL positioning */
+[dir="rtl"] .card__quick-view {
+  right: auto;
+  left: 1rem;
+}
+
+.product-card-wrapper:hover .card__quick-view {
+  animation: fadeInQuickView 0.3s ease forwards;
+}
+
+.quick-view-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--border-width) solid rgba(var(--color-foreground), var(--border-opacity));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.04);
+}
+
+.quick-view-button:hover {
+  background: rgba(var(--color-background), 1);
+  transform: scale(1.05);
+}
+
+.quick-view-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Keyframe animations for quick view button */
+@keyframes fadeInQuickView {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+@keyframes fadeOutQuickView {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
 
 .card__badge.top {
   align-self: flex-start;
@@ -375,6 +495,7 @@
   position: relative;
   z-index: 10;
 }
+
 
 .card__heading a:after {
   outline-offset: 0.3rem;

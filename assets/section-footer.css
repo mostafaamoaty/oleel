@@ -1,5 +1,6 @@
 .footer {
   /* border-top: 0.1rem solid rgba(var(--color-foreground), 0.08); */
+  position: relative;
 }
 
 .footer:not(.color-scheme-1) {
@@ -567,5 +568,27 @@
     .footer__content-top .grid__item {
       padding-left: 3rem;
     }
+  }
+}
+
+/* Footer absolute positioned image */
+.footer__absolute-image {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.footer__absolute-image img {
+  width: 500px;
+  height: auto;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 749px) {
+  .footer__absolute-image {
+    display: none;
   }
 }
