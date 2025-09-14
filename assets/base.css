@@ -1979,10 +1979,10 @@ input[type='checkbox'] {
 
 .quantity__input {
   color: currentColor;
-  font-family: var(--font-body-family);
+  font-family: "IBMPlexSansArabic-SemiBold";
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 500;
   opacity: 0.85;
   text-align: center;
@@ -2149,7 +2149,7 @@ input[type='checkbox'] {
   align-items: center;
   font-size: 0.9rem;
   bottom: 0.8rem;
-  left: 2.2rem;
+  inset-inline-start: 2.2rem;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 

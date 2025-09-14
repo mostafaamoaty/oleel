@@ -22,9 +22,13 @@
     <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
   {%- endunless -%}
   <span class="price-item price-item--last">
-    {{ price | unit_price_with_measurement: measurement }}
     {%- if is_sar_currency -%}
+      {%- assign unit_price_formatted = price | money_without_currency | replace: '.00', '' -%}
+      {{ unit_price_formatted -}}
+      {{- measurement.reference_unit }}
       <span class="svg-wrapper">{{ 'icon-sar.svg' | inline_asset_content }}</span>
+    {%- else -%}
+      {{ price | unit_price_with_measurement: measurement }}
     {%- endif -%}
   </span>
 </small>
