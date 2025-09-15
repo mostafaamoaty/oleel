@@ -3682,7 +3682,7 @@
       "view_full_details": "عرض التفاصيل الكاملة",
       "xr_button": "عرض في مساحتك",
       "xr_button_label": "عرض في مساحتك، وتحميل العنصر في نافذة الواقع المعزز",
-      "taxes_included": "شامل الضريبة",
+      "taxes_included": ".شامل الضريبة",
       "duties_included": "الواجبات المضمنة.",
       "duties_and_taxes_included": "الرسوم والضرائب متضمنة.",
       "shipping_policy_html": "يتم احتساب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">الشحن</a> عند الخروج.",
