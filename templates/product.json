@@ -90,6 +90,45 @@
         "padding_bottom": 12
       }
     },
+    "product_details_NrqKCA": {
+      "type": "product-details",
+      "blocks": {
+        "heading_zJkc8E": {
+          "type": "heading",
+          "settings": {
+            "heading": "تفاصيل عن المنتج",
+            "heading_size": "h2"
+          }
+        },
+        "text_rFFAFA": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.description }}",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zJkc8E",
+        "text_rFFAFA"
+      ],
+      "name": "Product Details",
+      "settings": {
+        "image": "{{ product.featured_image }}",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -111,6 +150,7 @@
   },
   "order": [
     "main",
+    "product_details_NrqKCA",
     "related-products"
   ]
 }
