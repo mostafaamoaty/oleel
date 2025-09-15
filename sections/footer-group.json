@@ -24,21 +24,21 @@
           "type": "link_list",
           "settings": {
             "heading": "سياستنا",
-            "menu": ""
+            "menu": "footer-menu-copy"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
             "heading": "من نحن",
-            "menu": ""
+            "menu": "footer-menu"
           }
         },
         "link_list_BazPLC": {
           "type": "link_list",
           "settings": {
             "heading": "الدعم و المساعدة",
-            "menu": ""
+            "menu": "footer-menu-copy-1"
           }
         }
       },

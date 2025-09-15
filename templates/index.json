@@ -114,6 +114,7 @@
         "column1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/star-06.svg",
             "title": "جودة لا يُضاهى بها",
             "text": "<p>كل عباءة تحمل شهادة أصالة تليق بذائقتك الرفيعة.</p>",
             "link_label": "",
@@ -123,6 +124,7 @@
         "column2": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/shield-tick.svg",
             "title": "راحة البال تبدأ من هنا",
             "text": "<p>عمليات شراء آمنة في منصة موثوقة منذ 2017.</p>",
             "link_label": "",
@@ -132,6 +134,7 @@
         "column3": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/package.svg",
             "title": "شحن راقٍ",
             "text": "<p>شحن سريع، مجاني، ودولي.. لتصل عبايتك بأناقتها دون تأخير.</p>",
             "link_label": "",
@@ -141,6 +144,7 @@
         "column_LVWQjJ": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/message-smile-square.svg",
             "title": "سياسة راقية",
             "text": "<p>استرجاع سهل، واضح، وبدون أي تعقيدات – لأن رضاكِ أولوية.</p>",
             "link_label": "",
