@@ -3495,6 +3495,9 @@
     },
     "video": {
       "load_video": "تحميل الفيديو: {{ description }}"
+    },
+    "logos_marquee": {
+      "no_logos": ""
     }
   },
   "general": {
@@ -3523,7 +3526,9 @@
         "snapchat": "سناب شات",
         "youtube": "يوتيوب",
         "vimeo": "فيميو",
-        "tiktok": "تيك توك"
+        "tiktok": "تيك توك",
+        "whatsapp": "",
+        "email": ""
       }
     },
     "continue_shopping": "متابعة التسوق",
@@ -3609,7 +3614,7 @@
   "products": {
     "product": {
       "add_to_cart": "أضف إلى السلة",
-      "choose_options": "اختر الخيارات",
+      "choose_options": "اضف الى السلة",
       "choose_product_options": "اختر الخيارات لـ {{ product_name }}",
       "description": "وصف",
       "inventory_in_stock": "في الأوراق المالية",
@@ -3649,7 +3654,8 @@
         "title": "تسعير الحجم",
         "note": "التسعير بالكميات المتاحة",
         "minimum": "{{ quantity }} +",
-        "price_at_each_html": "بسعر {{ price }} /للوحدة"
+        "price_at_each_html": "بسعر {{ price }} /للوحدة",
+        "price_range": ""
       },
       "pickup_availability": {
         "view_store_info": "عرض معلومات المتجر",
@@ -3679,7 +3685,8 @@
       "taxes_included": "الضرائب متضمنة.",
       "duties_included": "الواجبات المضمنة.",
       "duties_and_taxes_included": "الرسوم والضرائب متضمنة.",
-      "shipping_policy_html": "يتم احتساب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">الشحن</a> عند الخروج."
+      "shipping_policy_html": "يتم احتساب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">الشحن</a> عند الخروج.",
+      "nested_label": ""
     },
     "modal": {
       "label": "معرض الوسائط"
@@ -3762,7 +3769,8 @@
       }
     },
     "404": {
-      "title": "لم يتم العثور على الصفحة"
+      "title": "لم يتم العثور على الصفحة",
+      "subtext": ""
     },
     "search": {
       "no_results": "لم يتم العثور على نتائج لـ \" {{ terms }} \". تحقق من التهجئة أو استخدم كلمة أو عبارة مختلفة.",
@@ -3907,7 +3915,8 @@
       "last_name": "اسم العائلة",
       "email": "بريد إلكتروني",
       "password": "كلمة المرور",
-      "submit": "يخلق"
+      "submit": "يخلق",
+      "sign_in_link": ""
     },
     "reset_password": {
       "title": "إعادة تعيين كلمة مرور الحساب",
