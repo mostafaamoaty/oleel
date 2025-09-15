@@ -97,13 +97,24 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
+                <div class="product__title product__title-with-share" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
                     </h2>
                   </a>
+                  {%- comment -%} Share button inline with title {%- endcomment -%}
+                  {%- assign share_block = section.blocks | where: 'type', 'share' | first -%}
+                  {%- if share_block -%}
+                    {%- assign share_url = product.selected_variant.url
+                      | default: product.url
+                      | prepend: request.origin
+                    -%}
+                    <div class="product__title-share">
+                      {% render 'share-button', block: share_block, share_link: share_url %}
+                    </div>
+                  {%- endif -%}
                 </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -262,7 +273,11 @@
                     </span>
                   </label>
                   <div class="price-per-item__container">
-                    <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
+                    <quantity-input
+                      class="quantity product-form__quantity"
+                      data-url="{{ product.url }}"
+                      data-section="{{ section.id }}"
+                    >
                       <button class="quantity__button" name="minus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
@@ -470,10 +485,14 @@
                   </button>
                 </modal-opener>
               {%- when 'share' -%}
-                {% liquid
-                  assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
-                  render 'share-button', block: block, share_link: share_url
-                %}
+                {%- comment -%} Share button is now integrated with the title block {%- endcomment -%}
+                {%- assign title_block = section.blocks | where: 'type', 'title' | first -%}
+                {%- unless title_block -%}
+                  {% liquid
+                    assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
+                    render 'share-button', block: block, share_link: share_url
+                  %}
+                {%- endunless -%}
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -711,6 +730,32 @@
         </div>
       </modal-dialog>
     {%- endfor -%}
+
+    {% assign size_guide = section.blocks | where: 'type', 'size_guide' | first %}
+    {%- if size_guide -%}
+      <modal-dialog id="PopupModal-{{ size_guide.id }}" class="product-popup-modal" {{ size_guide.shopify_attributes }}>
+        <div
+          role="dialog"
+          aria-label="{{ size_guide.settings.text }}"
+          aria-modal="true"
+          class="product-popup-modal__content"
+          tabindex="-1"
+        >
+          <button
+            id="ModalClose-{{ size_guide.id }}"
+            type="button"
+            class="product-popup-modal__toggle"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            {{- 'icon-close.svg' | inline_asset_content -}}
+          </button>
+          <div class="product-popup-modal__content-info">
+            <h1 class="h2">{{ size_guide.settings.page.title | escape }}</h1>
+            {{ size_guide.settings.page.content }}
+          </div>
+        </div>
+      </modal-dialog>
+    {%- endif -%}
 
     {%- if product.media.size > 0 -%}
       <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
@@ -1178,6 +1223,31 @@
           "id": "page",
           "type": "page",
           "label": "t:sections.main-product.blocks.popup.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "size_guide",
+      "name": "Size Guide",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Size Guide",
+          "label": "Button text"
+        },
+        {
+          "id": "page",
+          "type": "page",
+          "label": "Size guide page"
+        },
+        {
+          "type": "text",
+          "id": "size_option_name",
+          "default": "Size",
+          "label": "Size option name",
+          "info": "Enter the exact name of the size option (e.g., 'Size', 'Sizes'). The size guide will only show when this option exists."
         }
       ]
     },

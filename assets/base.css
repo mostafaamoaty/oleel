@@ -657,7 +657,7 @@ summary {
 summary .icon-caret {
   position: absolute;
   height: 0.6rem;
-  right: 1.5rem;
+  inset-inline-end: 1.5rem;
   top: calc(50% - 0.2rem);
 }
 
@@ -1427,7 +1427,7 @@ details[open] > .share-button__fallback {
 
 .share-button__button .icon-share {
   height: 1.2rem;
-  margin-right: 1rem;
+  margin-inline-end: 1rem;
   min-width: 1.3rem;
 }
 
