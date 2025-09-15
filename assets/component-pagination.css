@@ -77,6 +77,27 @@ a.pagination__item:hover::after {
   transform: rotate(-90deg) scale(1.07);
 }
 
+/* RTL support for pagination buttons - reverse directions */
+[dir="rtl"] .pagination__item--next .icon {
+  margin-left: 0;
+  margin-right: -0.2rem;
+  transform: rotate(90deg) rotate(180deg);
+}
+
+[dir="rtl"] .pagination__item--next:hover .icon {
+  transform: rotate(90deg) rotate(180deg) scale(1.07);
+}
+
+[dir="rtl"] .pagination__item--prev .icon {
+  margin-right: 0;
+  margin-left: -0.2rem;
+  transform: rotate(-90deg) rotate(180deg);
+}
+
+[dir="rtl"] .pagination__item--prev:hover .icon {
+  transform: rotate(-90deg) rotate(180deg) scale(1.07);
+}
+
 .pagination__item-arrow:hover::after {
   display: none;
 }
