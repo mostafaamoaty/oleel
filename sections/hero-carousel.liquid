@@ -80,49 +80,97 @@
         <div class="hero-carousel__cards-track">
             {%- if section.blocks.size > 0 -%}
               {%- for block in section.blocks -%}
-                <div
-                  class="hero-carousel__card"
-                  {{ block.shopify_attributes }}
-                >
-                  <div class="hero-carousel__card-media">
-                    {%- if block.settings.image != blank -%}
-                      {{
-                        block.settings.image
-                        | image_url: width: 800
-                        | image_tag: loading: 'lazy', class: 'hero-carousel__card-image'
-                      }}
-                    {%- else -%}
-                      <div class="hero-carousel__card-placeholder">
-                        <span>No Image</span>
+                {%- if block.settings.link != blank -%}
+                  <div
+                    class="hero-carousel__card hero-carousel__card--linked"
+                    {{ block.shopify_attributes }}
+                  >
+                    <a href="{{ block.settings.link }}" class="hero-carousel__card-link">
+                      <div class="hero-carousel__card-media">
+                        {%- if block.settings.image != blank -%}
+                          {{
+                            block.settings.image
+                            | image_url: width: 800
+                            | image_tag: loading: 'lazy', class: 'hero-carousel__card-image'
+                          }}
+                        {%- else -%}
+                          <div class="hero-carousel__card-placeholder">
+                            <span>No Image</span>
+                          </div>
+                        {%- endif -%}
                       </div>
-                    {%- endif -%}
-                  </div>
 
-                  <div class="hero-carousel__card-content">
-                    {%- if block.settings.title != blank -%}
-                      <h3
-                        class="hero-carousel__card-title"
-                        style="color: {{ block.settings.title_color | default: '#000000' }};"
-                      >
-                        {{ block.settings.title }}
-                      </h3>
-                    {%- else -%}
-                      <h3 class="hero-carousel__card-title" style="color: #000000;">Card {{ forloop.index }}</h3>
-                    {%- endif -%}
-                    {%- if block.settings.description != blank -%}
-                      <div
-                        class="hero-carousel__card-description rte"
-                        style="color: {{ block.settings.description_color | default: '#666666' }};"
-                      >
-                        {{ block.settings.description }}
+                      <div class="hero-carousel__card-content">
+                        {%- if block.settings.title != blank -%}
+                          <h3
+                            class="hero-carousel__card-title"
+                            style="color: {{ block.settings.title_color | default: '#000000' }};"
+                          >
+                            {{ block.settings.title }}
+                          </h3>
+                        {%- else -%}
+                          <h3 class="hero-carousel__card-title" style="color: #000000;">Card {{ forloop.index }}</h3>
+                        {%- endif -%}
+                        {%- if block.settings.description != blank -%}
+                          <div
+                            class="hero-carousel__card-description rte"
+                            style="color: {{ block.settings.description_color | default: '#666666' }};"
+                          >
+                            {{ block.settings.description }}
+                          </div>
+                        {%- else -%}
+                          <div class="hero-carousel__card-description rte" style="color: #666666;">
+                            This is a sample card description. Add your content here.
+                          </div>
+                        {%- endif -%}
                       </div>
-                    {%- else -%}
-                      <div class="hero-carousel__card-description rte" style="color: #666666;">
-                        This is a sample card description. Add your content here.
-                      </div>
-                    {%- endif -%}
+                    </a>
                   </div>
-                </div>
+                {%- else -%}
+                  <div
+                    class="hero-carousel__card"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="hero-carousel__card-media">
+                      {%- if block.settings.image != blank -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 800
+                          | image_tag: loading: 'lazy', class: 'hero-carousel__card-image'
+                        }}
+                      {%- else -%}
+                        <div class="hero-carousel__card-placeholder">
+                          <span>No Image</span>
+                        </div>
+                      {%- endif -%}
+                    </div>
+
+                    <div class="hero-carousel__card-content">
+                      {%- if block.settings.title != blank -%}
+                        <h3
+                          class="hero-carousel__card-title"
+                          style="color: {{ block.settings.title_color | default: '#000000' }};"
+                        >
+                          {{ block.settings.title }}
+                        </h3>
+                      {%- else -%}
+                        <h3 class="hero-carousel__card-title" style="color: #000000;">Card {{ forloop.index }}</h3>
+                      {%- endif -%}
+                      {%- if block.settings.description != blank -%}
+                        <div
+                          class="hero-carousel__card-description rte"
+                          style="color: {{ block.settings.description_color | default: '#666666' }};"
+                        >
+                          {{ block.settings.description }}
+                        </div>
+                      {%- else -%}
+                        <div class="hero-carousel__card-description rte" style="color: #666666;">
+                          This is a sample card description. Add your content here.
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
               {%- endfor -%}
             {%- else -%}
               <!-- Default cards when no blocks are added -->
@@ -359,6 +407,11 @@
           "id": "description_color",
           "label": "Description Color",
           "default": "#666666"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Card Link"
         }
       ]
     }
