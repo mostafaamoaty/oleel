@@ -18,10 +18,27 @@
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'saudi-id-validation.js' | asset_url }}" defer="defer"></script>
 
 <style>
   .drawer {
     visibility: hidden;
+  }
+
+  .required {
+    color: rgb(var(--color-error));
+    margin-left: 0.25rem;
+  }
+
+  /* Saudi National ID container spacing */
+  .saudi-id-container {
+    margin-bottom: 2rem;
+  }
+
+  /* Ensure error message appears under input */
+  .saudi-id-container .form__message {
+    margin-top: 0.5rem;
+    display: block;
   }
 </style>
 
@@ -763,6 +780,35 @@
             {%- endif -%}
           </small>
         </div>
+
+        <!-- Saudi National ID Field -->
+        {%- if is_sar_currency -%}
+          <div class="saudi-id-container" {{ block.shopify_attributes }}>
+            <div class="field">
+              <input
+                type="text"
+                id="CartDrawer-SaudiId"
+                name="attributes[Saudi National ID]"
+                class="field__input"
+                placeholder="{{ 'sections.cart.saudi_national_id_placeholder' | t }}"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required
+                form="CartDrawer-Form"
+              >
+              <label for="CartDrawer-SaudiId" class="field__label">
+                {{ 'sections.cart.saudi_national_id' | t }}
+                <span class="required">*</span>
+              </label>
+            </div>
+            <small class="form__message" id="CartDrawer-SaudiId-error" style="display: none;">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ 'sections.cart.saudi_national_id_error' | t }}
+            </small>
+          </div>
+        {%- endif -%}
 
         <!-- CTAs -->
 

@@ -3471,7 +3471,10 @@
       "login": {
         "title": "هل لديك حساب؟",
         "paragraph_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\" class=\"link underlined-link\">قم بتسجيل الدخول</a> لتتمكن من الخروج بشكل أسرع."
-      }
+      },
+      "saudi_national_id": "الهوية الوطنية السعودية",
+      "saudi_national_id_placeholder": "أدخل رقم الهوية الوطنية السعودية المكون من 10 أرقام",
+      "saudi_national_id_error": "يرجى إدخال رقم هوية وطنية سعودية صحيح مكون من 10 أرقام"
     },
     "footer": {
       "payment": "طرق الدفع"
