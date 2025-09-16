@@ -11,13 +11,13 @@
   "sections": {
     "1757981869a58f6751": {
       "type": "apps",
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
     },
     "main": {
       "type": "main-login",
-      "disabled": true,
       "settings": {
         "enable_shop_login_button": true,
         "padding_top": 36,
@@ -36,6 +36,7 @@
       "block_order": [
         "miniorange_otp_login_register_otp_login_popup_button_4dEBhN"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -51,6 +52,7 @@
       "block_order": [
         "evlop_passwordless_login_user_authentication_6KTA6w"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
