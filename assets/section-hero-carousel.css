@@ -238,18 +238,7 @@
   }
   
   .hero-carousel__hero-navigation {
-    left: 1rem;
-    right: 1rem;
-  }
-  
-  .hero-carousel__nav-button {
-    width: 3rem;
-    height: 3rem;
-  }
-  
-  .hero-carousel__nav-button .svg-wrapper {
-    width: 1.2rem;
-    height: 1.2rem;
+    display: none; /* Hide navigation buttons on mobile */
   }
   
   .hero-carousel__content {
@@ -285,16 +274,6 @@
   
   .hero-carousel__description {
     font-size: 1.2rem;
-  }
-  
-  .hero-carousel__nav-button {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  
-  .hero-carousel__nav-button .svg-wrapper {
-    width: 1rem;
-    height: 1rem;
   }
 }
 

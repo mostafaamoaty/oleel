@@ -88,12 +88,33 @@ class HeroCarousel {
   }
 
   bindEvents() {
+    // Add click event listeners with better mobile support
     this.nextButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       console.log('Next button clicked');
       this.nextSlide();
     });
+
     this.prevButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       console.log('Prev button clicked');
+      this.prevSlide();
+    });
+
+    // Add touch event listeners for better mobile button support
+    this.nextButton.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Next button touched');
+      this.nextSlide();
+    });
+
+    this.prevButton.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Prev button touched');
       this.prevSlide();
     });
 
@@ -116,43 +137,86 @@ class HeroCarousel {
     let startX = 0;
     let startY = 0;
     let isScrolling = false;
+    let touchStartTime = 0;
 
-    this.cardsWrapper.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      isScrolling = false;
-    });
+    this.cardsWrapper.addEventListener(
+      'touchstart',
+      (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+        isScrolling = false;
+      },
+      { passive: true }
+    );
 
-    this.cardsWrapper.addEventListener('touchmove', (e) => {
-      if (!startX || !startY) return;
+    this.cardsWrapper.addEventListener(
+      'touchmove',
+      (e) => {
+        if (!startX || !startY) return;
 
-      const diffX = startX - e.touches[0].clientX;
-      const diffY = startY - e.touches[0].clientY;
+        const diffX = startX - e.touches[0].clientX;
+        const diffY = startY - e.touches[0].clientY;
 
-      if (Math.abs(diffX) > Math.abs(diffY)) {
-        isScrolling = true;
-        e.preventDefault();
-      }
-    });
-
-    this.cardsWrapper.addEventListener('touchend', (e) => {
-      if (!isScrolling) return;
-
-      const endX = e.changedTouches[0].clientX;
-      const diffX = startX - endX;
-
-      if (Math.abs(diffX) > 50) {
-        if (diffX > 0) {
-          this.nextSlide();
-        } else {
-          this.prevSlide();
+        // Only prevent default if we're definitely swiping horizontally
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+          isScrolling = true;
+          e.preventDefault();
         }
-      }
+      },
+      { passive: false }
+    );
 
-      startX = 0;
-      startY = 0;
-      isScrolling = false;
-    });
+    this.cardsWrapper.addEventListener(
+      'touchend',
+      (e) => {
+        if (!isScrolling || !startX || !startY) {
+          startX = 0;
+          startY = 0;
+          isScrolling = false;
+          return;
+        }
+
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        const touchDuration = Date.now() - touchStartTime;
+
+        // Require minimum swipe distance and maximum touch duration for swipe
+        if (Math.abs(diffX) > 50 && touchDuration < 500) {
+          const isRTL =
+            document.documentElement.dir === 'rtl' || document.documentElement.getAttribute('lang') === 'ar';
+
+          console.log('Swipe detected:', {
+            diffX: diffX,
+            isRTL: isRTL,
+            startX: startX,
+            endX: endX,
+            swipeDirection: diffX < 0 ? 'right' : 'left',
+          });
+
+          if (isRTL) {
+            // RTL: Right swipe (diffX < 0) should go to next slide, left swipe (diffX > 0) should go to previous
+            if (diffX < 0) {
+              this.nextSlide(); // Right swipe goes to next
+            } else {
+              this.prevSlide(); // Left swipe goes to previous
+            }
+          } else {
+            // LTR: Left swipe (diffX > 0) should go to next slide, right swipe (diffX < 0) should go to previous
+            if (diffX > 0) {
+              this.nextSlide(); // Left swipe goes to next
+            } else {
+              this.prevSlide(); // Right swipe goes to previous
+            }
+          }
+        }
+
+        startX = 0;
+        startY = 0;
+        isScrolling = false;
+      },
+      { passive: true }
+    );
   }
 
   addKeyboardSupport() {
