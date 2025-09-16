@@ -43,6 +43,7 @@
         "collapsible_row_tGAXxW",
         "collapsible_row_XExjdr"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
