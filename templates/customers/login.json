@@ -32,10 +32,26 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "17579840114df648d6": {
+      "type": "apps",
+      "blocks": {
+        "miniorange_otp_login_register_otp_login_popup_button_4dEBhN": {
+          "type": "shopify://apps/miniorange-otp-login-register/blocks/otp-login-popup-button/dba67ab6-2825-41e1-83fd-7500e426945d",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "miniorange_otp_login_register_otp_login_popup_button_4dEBhN"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "1757981869a58f6751",
-    "main"
+    "main",
+    "17579840114df648d6"
   ]
 }
