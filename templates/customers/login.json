@@ -11,15 +11,6 @@
   "sections": {
     "1757981869a58f6751": {
       "type": "apps",
-      "blocks": {
-        "otp_login_notify_app_section_block_mqmmnT": {
-          "type": "shopify://apps/otp-login-notify/blocks/app-section-block/c26b7b17-273d-4800-af62-8ec88ba18251",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "otp_login_notify_app_section_block_mqmmnT"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -38,6 +29,7 @@
       "blocks": {
         "miniorange_otp_login_register_otp_login_popup_button_4dEBhN": {
           "type": "shopify://apps/miniorange-otp-login-register/blocks/otp-login-popup-button/dba67ab6-2825-41e1-83fd-7500e426945d",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -47,11 +39,27 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "175798506845c4655c": {
+      "type": "apps",
+      "blocks": {
+        "evlop_passwordless_login_user_authentication_6KTA6w": {
+          "type": "shopify://apps/evlop-passwordless-login/blocks/user-authentication/d1707ae5-08d2-4dba-b72f-ffcc0cba79ec",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "evlop_passwordless_login_user_authentication_6KTA6w"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "1757981869a58f6751",
     "main",
-    "17579840114df648d6"
+    "17579840114df648d6",
+    "175798506845c4655c"
   ]
 }
