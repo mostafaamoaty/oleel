@@ -52,7 +52,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -188,7 +188,8 @@
             "title": "التصاميم الكلاسيكية",
             "description": "<p>تصاميم خالدة بقصّات محافظة وأقمشة فاخرة تلائم العمل والمناسبات الرسمية.</p>",
             "title_color": "#000000",
-            "description_color": "#666666"
+            "description_color": "#666666",
+            "link": ""
           }
         },
         "card_KBe7Rw": {
@@ -198,7 +199,8 @@
             "title": "التصاميم المطرّزة",
             "description": "<p>تفاصيل دقيقة وتطريزات راقية مستوحاة من التراث السعودي، للمناسبات المميزة.</p>",
             "title_color": "#000000",
-            "description_color": "#666666"
+            "description_color": "#666666",
+            "link": ""
           }
         },
         "card_Rej97x": {
@@ -208,7 +210,8 @@
             "title": "تصاميم الساتان والحرير",
             "description": "<p>خامات لامعة ناعمة تنسدل بانسيابية، لتظهري بإطلالة أنثوية ساحرة.</p>",
             "title_color": "#000000",
-            "description_color": "#666666"
+            "description_color": "#666666",
+            "link": ""
           }
         },
         "card_wakiyV": {
@@ -218,7 +221,8 @@
             "title": "التصاميم المفتوحة",
             "description": "<p>عصرية، عملية، وسهلة التنسيق، مناسبة للإطلالات اليومية أو السفر.</p>",
             "title_color": "#000000",
-            "description_color": "#666666"
+            "description_color": "#666666",
+            "link": ""
           }
         }
       },
