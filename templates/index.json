@@ -139,6 +139,7 @@
         },
         "banner_FwhpPf": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PHOTO-2025-07-25-13-59-10.jpg",
             "size": "small",
@@ -223,7 +224,7 @@
       ],
       "name": "Hero with Cards Carousel",
       "settings": {
-        "hero_image": "shopify://shop_images/banner-image.jpg",
+        "hero_image": "shopify://shop_images/about-card-3.png",
         "heading": "بتصاميــــم متقنــــة..  نرســـــم تفاصيــــل حضــــورٍ لا يُنســـــــى..",
         "heading_size": "h1",
         "description": "<p>نحن في أوليل، ننسج تصاميم تعكس ذوقكِ الصافي، وهدوء حضورك. كل تصميم هو نتاج بحث دقيق في خامات راقية، وتفاصيل مأخوذة من الليل العربي.. من سحره، من صمته، من هدوءه. نعمل بشغف لنقدّم لكِ قطعًا متقنة تنتمي لكِ وتليق بكِ.</p>",
