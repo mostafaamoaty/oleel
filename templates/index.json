@@ -11,17 +11,6 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "blocks": {
-        "shop_now_button_MxKGD7": {
-          "type": "shop_now_button",
-          "settings": {
-            "button_text": "تسوق الآن"
-          }
-        }
-      },
-      "block_order": [
-        "shop_now_button_MxKGD7"
-      ],
       "settings": {
         "image": "shopify://shop_images/Hero_image.jpg",
         "image_overlay_opacity": 0,
