@@ -206,6 +206,7 @@
         },
         "card_wakiyV": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Untitleddesign-2023-05-02T171107.849_dd3204bb-47b6-4319-a1e6-681be7e82109.jpg",
             "title": "التصاميم المفتوحة",
