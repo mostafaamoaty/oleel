@@ -125,6 +125,7 @@
       "blocks": {
         "banner_rKLq8t": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_2229.jpg",
             "size": "small",
