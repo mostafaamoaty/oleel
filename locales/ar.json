@@ -1648,10 +1648,10 @@
         }
       },
       "marketing": {
-        "accept_marketing_checkbox_label": "أرسل لي بريدًا إلكترونيًا بالأخبار والعروض",
+        "accept_marketing_checkbox_label": "أرسلوا لي بريدًا إلكترونيًا بالأخبار والعروض",
         "post_accept_marketing_checkbox_label": "لقد اشتركت لتلقي الأخبار والعروض عبر البريد الإلكتروني",
         "pending_accept_marketing_checkbox_label": "تحقق من بريدك الإلكتروني لتأكيد اشتراكك في الأخبار والعروض",
-        "accept_sms_checkbox_label": "أرسل لي رسالة نصية بالأخبار والعروض",
+        "accept_sms_checkbox_label": "أرسلوا لي رسالة نصية بالأخبار والعروض",
         "disclaimer": {
           "privacy_policy": "سياسة الخصوصية",
           "terms_of_service": "شروط الخدمة"
@@ -3348,7 +3348,7 @@
       "remaining_amount": "متبقي",
       "marketing_section_title": "الأخبار والعروض",
       "marketing_description": "ستصلك رسائل تسويقية عبر البريد الإلكتروني. يمكنك إلغاء الاشتراك في أي وقت.",
-      "marketing_checkbox_label": "أرسل لي بريدًا إلكترونيًا بالأخبار والعروض",
+      "marketing_checkbox_label": "أرسلوا لي بريدًا إلكترونيًا بالأخبار والعروض",
       "marketing_checkmark_label": "لقد اشتركت لتلقي الأخبار والعروض عبر البريد الإلكتروني",
       "returns": {
         "expand_events_label": "إظهار التفاصيل",
