@@ -419,8 +419,8 @@
         "total_due_today_label": "الإجمالي المستحق اليوم",
         "total_due_later_label": "الإجمالي المستحق لاحقًا",
         "partial_total_label": "المجموع",
-        "free_total_label": "حر",
-        "free_shipping_total_label": "حر",
+        "free_total_label": "شحن مجاني",
+        "free_shipping_total_label": "شحن مجاني",
         "paid_label": "مدفوع",
         "payment_due_label": "الدفع المستحق",
         "vat_label_html": "بما في ذلك %{amount} في الضرائب",
@@ -748,7 +748,7 @@
         "saved_credit_card_info": "آخر أربعة أرقام",
         "saved_credit_card_cvv_verification": "لأغراض التحقق، يرجى إدخال رمز الأمان الخاص ببطاقتك.",
         "saved_credit_card_actions": {
-          "edit": "يحرر",
+          "edit": "تعديل",
           "delete": "يمسح"
         },
         "saved_credit_cards_modal": {
@@ -878,7 +878,7 @@
         "express_payment_gateway_label": "يعبر",
         "manual_payment_gateway_label": "يدوي",
         "billing_address_title": "عنوان الفاتورة",
-        "free_label": "حر"
+        "free_label": "شحن مجاني"
       },
       "field_errors": {
         "handle_phone_invalid": "أدخل رقم هاتف صالح",
@@ -1126,7 +1126,7 @@
         "no_tracking_number": "لا يوجد رقم تتبع لهذا الطلب."
       },
       "delivery_options": {
-        "free_total_label": "حر",
+        "free_total_label": "شحن مجاني",
         "ship": "سفينة",
         "ship_to_address": "عنوان الشحن",
         "shipping_address": "عنوان الشحن",
@@ -1461,7 +1461,7 @@
         "shipping_address_title": "عنوان الشحن",
         "add_address": "استخدم عنوانًا مختلفًا",
         "add_delivery_instructions": "إضافة تعليمات التسليم",
-        "edit": "يحرر",
+        "edit": "شحن مجاني",
         "delete": "يمسح",
         "address_more": "مزيد من الإجراءات لهذا العنوان",
         "address_edit": "تعديل العنوان",
@@ -1532,7 +1532,7 @@
         "no_pickup_location_notice": "على الأقل أحد منتجاتك غير متاح للاستلام",
         "no_rates_for_country_notice": "لم يتم العثور على أسعار الشحن لهذا العنوان.",
         "no_rates_contact_notice": "اتصل بنا لمزيد من المعلومات",
-        "free_rate_label": "حر",
+        "free_rate_label": "شحن مجاني",
         "cheapest_rate_label": "أرخص",
         "please_enter_your_shipping_information_notice": "الرجاء إدخال معلومات الشحن الخاصة بك.",
         "estimated_delivery_date": {
@@ -3852,7 +3852,7 @@
       "add": "إضافة عنوان",
       "update": "تحديث العنوان",
       "cancel": "يلغي",
-      "edit": "يحرر",
+      "edit": "تعديل",
       "delete": "يمسح",
       "delete_confirm": "هل أنت متأكد أنك تريد حذف هذا العنوان؟"
     },
