@@ -1458,7 +1458,7 @@
         },
         "shipping_used_as_billing_notice": "سيتم أيضًا استخدام هذا كعنوان إرسال الفاتورة الخاص بك لهذا الطلب.",
         "address_update": "تحديث العنوان",
-        "shipping_address_title": "سافر على متن سفينة لِـ",
+        "shipping_address_title": "عنوان الشحن",
         "add_address": "استخدم عنوانًا مختلفًا",
         "add_delivery_instructions": "إضافة تعليمات التسليم",
         "edit": "يحرر",
@@ -1620,7 +1620,7 @@
         "blocks": {
           "contact_method_title": "اتصال",
           "billing_address_title": "الفواتير",
-          "shipping_address_title": "سافر على متن سفينة لِـ",
+          "shipping_address_title": "عنوان الشحن",
           "shipping_method_title": "طريقة الشحن",
           "payment_method_title": "طريقة الدفع",
           "change_link_label": "يتغير",
