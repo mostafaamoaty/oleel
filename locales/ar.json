@@ -857,7 +857,7 @@
         "billing_address_title": "مشروع قانون ل",
         "same_as_shipping": "نفس عنوان الشحن",
         "add_address": "استخدم عنوانًا مختلفًا",
-        "edit": "يحرر",
+        "edit": "تعديل",
         "delete": "يمسح",
         "address_more": "مزيد من الإجراءات لهذا العنوان",
         "address_edit": "تعديل العنوان",
@@ -2860,7 +2860,7 @@
       "profile_card": {
         "cancel": "يلغي",
         "cancel_accessibility_label": "إلغاء تحرير الملف الشخصي",
-        "edit": "يحرر",
+        "edit": "تعديل",
         "edit_accessibility_label": "تعديل الملف الشخصي",
         "email_help_text": "لا يمكن تغيير البريد الإلكتروني المستخدم لتسجيل الدخول",
         "first_name": "الاسم الأول",
@@ -2881,7 +2881,7 @@
         "verify_button": "يؤكد",
         "verify_button_accessibility_label": "التحقق من كلمة المرور لمرة واحدة",
         "cancel_button": "يلغي",
-        "cancel_button_accessibility_label": "إلغاء تحرير البريد الإلكتروني"
+        "cancel_button_accessibility_label": "إلغاء تعديل البريد الإلكتروني"
       },
       "email_update_success_modal": {
         "title": "التحقق من البريد الإلكتروني",
@@ -3146,7 +3146,7 @@
         "total_amount_of_subscription_line_items_left": "و {{total}} أكثر",
         "total_amount_of_subscription_line_items_left_accessibility_label": "إجمالي {{totalItems}} عنصرًا، يتم عرض {{totalItemsToDisplay}} عنصرًا.",
         "next_payment_due": "الدفعة التالية مستحقة {{dueDateInMonthDayYear}}",
-        "edit_payment_method_button": "يحرر",
+        "edit_payment_method_button": "تعديل",
         "edit_payment_method_button_accessibility_label": "تعديل طريقة الدفع التي تنتهي بـ {{lastDigits}}",
         "loading_shop_pay": "تحميل Shop Pay",
         "invalid_payment_method": "طريقة الدفع غير صالحة",
