@@ -764,7 +764,7 @@
         "amazon_payments_failed_mfa_challenge": "لم يتم استخدام طريقة الدفع المُختارة. اختر طريقة دفع أخرى أو تواصل مع البنك أو مُصدر البطاقة.",
         "amazon_payments_abandoned_mfa_challenge": "لم يتم إكمال عملية الدفع. جرّب طريقة دفع أخرى أو تواصل مع البنك أو جهة إصدار البطاقة.",
         "amazon_payments_could_not_enqueue_authorize": "حدثت مشكلة أثناء معالجة دفعتك. حاول مرة أخرى أو استخدم طريقة دفع أخرى.",
-        "title": "قسط",
+        "title": "الدفع",
         "amount_left_to_pay_label": "الدفع المستحق:",
         "discount_button_action_label": "تطبيق رمز الخصم",
         "gift_card_code_label": "رمز بطاقة الهدايا",
@@ -3293,7 +3293,7 @@
       "payment": {
         "status_in_review": "الدفع مستحق بعد المراجعة",
         "status_unpaid": "الدفع مستحق في {{date}}",
-        "title": "قسط",
+        "title": "الدفع",
         "payment_type": {
           "gift_card": "بطاقة هدية",
           "store_credit": "رصيد المتجر",
