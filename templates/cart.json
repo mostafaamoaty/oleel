@@ -12,7 +12,7 @@
     "cart-items": {
       "type": "main-cart-items",
       "custom_css": [
-        "#CartDrawer-SaudiId{display: none;}"
+        "# CartDrawer-SaudiId {display: none !important;}"
       ],
       "settings": {
         "color_scheme": "",
