@@ -135,12 +135,3 @@ class SaudiIdValidation {
   }
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  new SaudiIdValidation();
-});
-
-// Also initialize when cart drawer is opened (for dynamic content)
-document.addEventListener('cart:opened', () => {
-  new SaudiIdValidation();
-});
