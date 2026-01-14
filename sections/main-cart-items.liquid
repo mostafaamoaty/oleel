@@ -705,18 +705,6 @@
               {%- endif -%}
             </small>
 
-            <!-- Saudi National ID Field -->
-            {%- if is_sar_currency -%}
-              <div class="saudi-id-container">
-                <small class="form__message" id="Cart-SaudiId-error" style="display: none;">
-                  <span class="svg-wrapper">
-                    {{- 'icon-error.svg' | inline_asset_content -}}
-                  </span>
-                  {{ 'sections.cart.saudi_national_id_error' | t }}
-                </small>
-              </div>
-            {%- endif -%}
-
             <div class="cart__ctas">
               <button
                 type="submit"
