@@ -785,22 +785,6 @@
         {%- if is_sar_currency -%}
           <div class="saudi-id-container" {{ block.shopify_attributes }}>
             <div class="field">
-
-              
-              {% comment %} 
-              hide CartDrawer-SaudiId from cart
-              <input
-                type="text"
-                id="CartDrawer-SaudiId"
-                name="attributes[Saudi National ID]"
-                class="field__input"
-                placeholder="{{ 'sections.cart.saudi_national_id_placeholder' | t }}"
-                pattern="[0-9]{10}"
-                maxlength="10"
-                required
-                form="CartDrawer-Form"
-              > {% endcomment %}
-
               <label for="CartDrawer-SaudiId" class="field__label">
                 {{ 'sections.cart.saudi_national_id' | t }}
                 <span class="required">*</span>
