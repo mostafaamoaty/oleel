@@ -784,12 +784,6 @@
         <!-- Saudi National ID Field -->
         {%- if is_sar_currency -%}
           <div class="saudi-id-container" {{ block.shopify_attributes }}>
-            <div class="field">
-              <label for="CartDrawer-SaudiId" class="field__label">
-                {{ 'sections.cart.saudi_national_id' | t }}
-                <span class="required">*</span>
-              </label>
-            </div>
             <small class="form__message" id="CartDrawer-SaudiId-error" style="display: none;">
               <span class="svg-wrapper">
                 {{- 'icon-error.svg' | inline_asset_content -}}
