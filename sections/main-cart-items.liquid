@@ -708,23 +708,6 @@
             <!-- Saudi National ID Field -->
             {%- if is_sar_currency -%}
               <div class="saudi-id-container">
-                <div class="field">
-                  <input
-                    type="text"
-                    id="Cart-SaudiId"
-                    name="attributes[Saudi National ID]"
-                    class="field__input"
-                    placeholder="{{ 'sections.cart.saudi_national_id_placeholder' | t }}"
-                    pattern="[0-9]{10}"
-                    maxlength="10"
-                    required
-                    form="cart"
-                  >
-                  <label for="Cart-SaudiId" class="field__label">
-                    {{ 'sections.cart.saudi_national_id' | t }}
-                    <span class="required">*</span>
-                  </label>
-                </div>
                 <small class="form__message" id="Cart-SaudiId-error" style="display: none;">
                   <span class="svg-wrapper">
                     {{- 'icon-error.svg' | inline_asset_content -}}
