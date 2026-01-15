@@ -419,5 +419,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".list-social__item {height: 50px; width: 50px;}"
+    ]
   }
 }
